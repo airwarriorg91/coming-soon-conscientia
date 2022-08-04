@@ -1,7 +1,7 @@
 :root{
     --primary:#774e24;
     --primary-light:#d49849;
-    --primary-dark: #56351e;
+    --accent: #941c2f;
     --blue-dark:#003153;
     --blue:#c9daea;
 }
@@ -10,12 +10,12 @@ body{
     width:100%;
     height:100vh;
     margin:0;
+    overflow-y:hidden;
 }
 
 .homecontainer{
     display: grid;
     grid-template-columns: 35% 65%;
-    background-color: #00000044;
     background-image: url('/static/img/bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -54,24 +54,28 @@ body{
     display:flex;
     height:fit-content;
     width:100%;
-    justify-content: center;
-    align-items: center;
+    height:fit-content;
+    margin-top: 220px;
+    margin-right:40px;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
+
 h1{
-  color: var(--blue-dark);
+  color: var(--blue);
   font-size: 28px;
   font-weight: bold;
   font-family: 'Poppins', sans-serif;
   letter-spacing: 7px;
   cursor: text;
-  margin:20px 10px;
+  margin:30px 10px;
   text-align: center;
-  text-shadow: 3px 3px 5px var(--blue);
+  text-shadow: 3px 3px 0px var(--accent);
 } 
 
 h2{
-  color: var(--blue-dark);
-  font-size: 23px;
+  color: var(--blue);
+  font-size: 30px;
   font-weight: bold;
   font-family: 'Poppins', sans-serif;
   letter-spacing: 7px;
@@ -87,16 +91,16 @@ h2 span{
 @keyframes glow{
 
     0%{
-        text-shadow: 0 0 10px #fff;
+        text-shadow: 0 0 20px #fff;
     }
 
     50%{
-        text-shadow: 0 0 20px #fff, 
-                     0 0 40px #fff;
+        text-shadow: 0 0 20px var(--accent), 
+                     0 0 40px var(--accent);
     }
 
     100%{
-        text-shadow: 0 0 10px #fff;
+        text-shadow: 0 0 20px #fff;
     }
 
 }
@@ -105,44 +109,27 @@ h2:hover span:nth-child(1){
     letter-spacing:8px;
 }
 
-hr {
-  display: block;
-  width:30%;
-  height:5px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border-style: inset;
-  border-width: 1px;
-  margin-left: 0px;
-  margin-right: 0px;
-  border-radius: 10px;
-  text-align: center;
-  background-color: var(--primary);
-  border-color: var(--primary);
-}
 
 .tagline{
   color: var(--blue);
-  font-size: 23px;
+  font-size: 28px;
   font-weight: 500;
   font-family: 'Source Sans Pro', sans-serif;
   letter-spacing: 5px;
   cursor: text;
-  margin-top:10px;
-  margin-bottom: 20px;
-  text-shadow: 3px 3px 5px var(--blue-dark);
+  margin-bottom: 25px;
+  text-shadow: 2px 2px 0px var(--accent);
 }
 
 .hashtag{
   color: var(--blue);
-  font-size: 40px;
+  font-size: 28px;
   font-weight: 500;
   font-family: 'Source Sans Pro', sans-serif;
   letter-spacing: 5px;
   cursor: text;
-  margin-top:10px;
-  margin-bottom: 20px;
-  text-shadow: 3px 3px 5px var(--blue-dark);
+  margin-bottom: 25px;
+  text-shadow: 2px 2px 0px var(--accent);
 }
 
 #preloader {
@@ -154,4 +141,63 @@ hr {
   height: 100%;
   overflow: visible;
   background:#000 url("/static/img/preloader.gif") no-repeat center center;
+}
+
+.typewritercontainer{
+    display: flex;
+    background-image: url('/static/img/terminal.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    justify-content: center;
+    width:100%;
+    height:100vh;
+    margin:0;
+    flex-direction: column;
+}
+
+.cont{
+    display: flex;
+    width:fit-content;
+    align-items: center;
+    align-self: center;
+    margin:15px 0px;
+}
+.headingh1{
+  position: absolute;
+  color: #3f3;
+  font-family: 'VT323', monospace, sans-serif;
+  font-size: 24px;
+  margin: 10px 30px; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  text-shadow: 0px 0px 3px #3f3;
+  text-align: left;
+  top:30px;
+}
+
+.typewriter h1 {
+  color: #3f3;
+  font-family: 'VT323', monospace, sans-serif;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid #3f3; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  text-shadow: 0px 0px 3px #3f3;
+  text-align: center;
+
+  animation: 
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
 }
