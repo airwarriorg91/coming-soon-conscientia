@@ -13,14 +13,6 @@ body{
     overflow-y:hidden;
 }
 
-.preload * {
-  -webkit-transition: none !important;
-  -moz-transition: none !important;
-  -ms-transition: none !important;
-  -o-transition: none !important;
-  transition: none !important;
-}
-
 .homecontainer{
     display: grid;
     grid-template-columns: 35% 65%;
@@ -192,9 +184,10 @@ h2:hover span:nth-child(1){
   letter-spacing: .15em; /* Adjust as needed */
   text-shadow: 0px 0px 3px #3f3;
   text-align: center;
+}
 
-  animation: 
-    typing 3.5s steps(30, end),
+.typewriter h1.animate{
+    animation: typing 3.5s steps(30, end),
     blink-caret .5s step-end infinite;
 }
 
