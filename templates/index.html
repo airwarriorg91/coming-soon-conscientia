@@ -38,8 +38,9 @@
     <div id="preloader"></div>
     <script type="text/javascript">
     document.addEventListener("DOMContentLoaded",function(){
-    let node = document.querySelector('.preload');
-    node.classList.remove('preload');
+    setTimeout{function(){
+      let node = document.querySelector('.preload');
+    node.classList.remove('preload');},1000};
     });
     </script>
     <script type="text/javascript">
