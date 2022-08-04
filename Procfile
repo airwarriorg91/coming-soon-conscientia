@@ -1,1 +1,1 @@
-web: gunicorn conscientia2k22.wsgi:application --log-file -
+web: gunicorn comingsoon.wsgi:application --log-file -
