@@ -13,6 +13,13 @@ body{
     overflow-y:hidden;
 }
 
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+
 .homecontainer{
     display: grid;
     grid-template-columns: 35% 65%;
