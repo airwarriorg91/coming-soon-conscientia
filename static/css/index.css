@@ -93,6 +93,7 @@ h2{
 }
 
 h2 span{
+  transition-delay: 2s;
   animation: glow 3s infinite linear;
 }
 

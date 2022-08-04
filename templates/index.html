@@ -13,14 +13,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Poppins&family=Lato&family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9dde0b24ee.js" crossorigin="anonymous"></script>
   </head>
-  <body class="preload">
+  <body  class="preload">
     <div class="typewritercontainer">
       <h1 class="headingh1">New Transmission recived from Ground Station 3091, Earth</h1>
       <div class="cont">
-      <div class="typewriter">
+        <div class="typewriter">
           <h1>"31st Sept - 3rd Oct 2022, Set the dates !" </h1>
+        </div>
       </div>
-    </div>
     </div>
     <div class="homecontainer">
       <div class="columnb">
@@ -37,7 +37,13 @@
     </div>
     <div id="preloader"></div>
     <script type="text/javascript">
-      setTimeout(function(){
+    document.addEventListener("DOMContentLoaded",function(){
+    let node = document.querySelector('.preload-transitions');
+    node.classList.remove('preload-transitions');
+    });
+    </script>
+    <script type="text/javascript">
+    setTimeout(function(){
     document.querySelector(".typewritercontainer").style.display = "none";
     }, 5500);
     </script>
