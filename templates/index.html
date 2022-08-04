@@ -37,6 +37,9 @@
     </div>
     <div id="preloader"></div>
     <script type="text/javascript">
+      $(window).load(function() {
+      $("body").removeClass("preload");
+      });
       setTimeout(function(){
     document.querySelector(".typewritercontainer").style.display = "none";
     }, 5500);
