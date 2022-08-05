@@ -324,7 +324,7 @@ h2{
     }
 
     .typewriter h1.animate{
-    animation: blink-caret .5s step-end infinite;
+    animation: blink-caret .5s step-end 6;
     }
 
     .typewritercontainer:after, .typewritercontainer:before{
