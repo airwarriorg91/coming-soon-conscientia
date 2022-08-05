@@ -4,6 +4,7 @@
     --accent: #941c2f;
     --blue-dark:#003153;
     --blue:#c9daea;
+    --glitch-visibility:hidden;
 }
 
 body{
@@ -52,11 +53,12 @@ body{
 
 .textcontainer{
     display:flex;
+    position:absolute;
     height:fit-content;
     width:100%;
     height:fit-content;
-    margin-top: 220px;
-    margin-right:40px;
+    bottom:0px;
+    right:20px;
     justify-content: flex-end;
     align-items: flex-end;
 }
@@ -65,7 +67,7 @@ h1{
   color: var(--blue);
   font-size: 28px;
   font-weight: bold;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   letter-spacing: 7px;
   cursor: text;
   margin:30px 10px;
@@ -75,42 +77,20 @@ h1{
 
 h2{
   color: var(--blue);
-  font-size: 30px;
+  font-size: 34px;
   font-weight: bold;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   letter-spacing: 7px;
-  cursor: pointer;
+  cursor: text;
   margin:0px 0px;
   text-align: center;
+  text-shadow: 2px 2px 0px var(--accent);
 }
 
-h2 span{
-  animation: glow 3s infinite linear;
-}
-
-@keyframes glow{
-
-    0%{
-        text-shadow: 0 0 20px #fff;
-    }
-
-    50%{
-        text-shadow: 0 0 20px var(--accent), 
-                     0 0 40px var(--accent);
-    }
-
-    100%{
-        text-shadow: 0 0 20px #fff;
-    }
-
-}
-h2:hover span:nth-child(1){
-    color:var(--blue);
-    letter-spacing:8px;
-}
 
 
 .tagline{
+  visibility: hidden;
   color: var(--blue);
   font-size: 28px;
   font-weight: 500;
@@ -121,16 +101,6 @@ h2:hover span:nth-child(1){
   text-shadow: 2px 2px 0px var(--accent);
 }
 
-.hashtag{
-  color: var(--blue);
-  font-size: 28px;
-  font-weight: 500;
-  font-family: 'Source Sans Pro', sans-serif;
-  letter-spacing: 5px;
-  cursor: text;
-  margin-bottom: 25px;
-  text-shadow: 2px 2px 0px var(--accent);
-}
 
 #preloader {
   position: fixed;
@@ -145,7 +115,6 @@ h2:hover span:nth-child(1){
 
 .typewritercontainer{
     display: flex;
-    background-image: url('/static/img/terminal.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     justify-content: center;
@@ -153,7 +122,109 @@ h2:hover span:nth-child(1){
     height:100vh;
     margin:0;
     flex-direction: column;
+    background-image: url('/static/img/terminal.jpg');
 }
+
+.typewritercontainer:after, .typewritercontainer:before{
+    visibility: var(--glitch-visibility);
+    content: "";
+    position: absolute;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    background: inherit;
+    transform: translateX(10px);
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    background-blend-mode:difference; 
+}
+
+.typewritercontainer:after{
+    animation-name: glitchAnim1;
+}
+
+.typewritercontainer:before{
+    animation-name: glitchAnim2;
+}
+
+
+@keyframes glitchAnim1{
+    0%, 25.1%, 100%{
+        clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    }
+    4%{
+        clip-path: polygon(0 0, 100% 0, 100% 10%, 0 10%);
+    }
+    5%{
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    9%{
+        clip-path: polygon(0 20%, 100% 20%, 100% 30%, 0 30%);
+    }
+    10%{
+        clip-path: polygon(0 20%, 100% 20%, 100% 20%, 0 20%);
+    }
+    14%{
+        clip-path: polygon(0 40%, 100% 40%, 100% 50%, 0 50%);
+    }
+    15%{
+        clip-path: polygon(0 40%, 100% 40%, 100% 40%, 0 40%);
+    }
+    19%{
+        clip-path: polygon(0 60%, 100% 60%, 100% 70%, 0 70%);
+    }
+    20%{
+        clip-path: polygon(0 60%, 100% 60%, 100% 60%, 0 60%);
+    }
+    24%{
+        clip-path: polygon(0 80%, 100% 80%, 100% 90%, 0 90%);
+    }
+    25%{
+        clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
+    }
+}
+
+@keyframes glitchAnim2{
+    0%, 25.1%, 100%{
+        clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    }
+    4%{
+        clip-path: polygon(0 80%, 100% 80%, 100% 90%, 0 90%);
+        background-color: rgba(0,255,0,0.7);
+    }
+    5%{
+        clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
+        background-color: transparent;
+    }
+    9%{
+        clip-path: polygon(0 60%, 100% 60%, 100% 70%, 0 70%);
+    }
+    10%{
+        clip-path: polygon(0 60%, 100% 60%, 100% 60%, 0 60%);
+    }
+    14%{
+        clip-path: polygon(0 40%, 100% 40%, 100% 50%, 0 50%);
+    }
+    15%{
+        clip-path: polygon(0 40%, 100% 40%, 100% 40%, 0 40%);
+    }
+    19%{
+        clip-path: polygon(0 20%, 100% 20%, 100% 30%, 0 30%);
+    }
+    20%{
+        clip-path: polygon(0 20%, 100% 20%, 100% 20%, 0 20%);
+    }
+    24%{
+        clip-path: polygon(0 0, 100% 0, 100% 10%, 0 10%);
+    }
+    25%{
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+}
+
 
 .cont{
     display: flex;

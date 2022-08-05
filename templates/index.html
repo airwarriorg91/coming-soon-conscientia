@@ -27,11 +27,10 @@
         <div class="logocontainer">
           <img class="logo" src="/static/img/logo_web.png">
         </div>
-        <h1><span>31st Sept - 3rd Oct 2022</span></h1>
-        <h2><span>Coming Soon</span></h2>
+        <h1>31st Sept - 3rd Oct 2022</h1>
+        <h2>Coming Soon</h2>
         <div class="textcontainer">
-          <h2 class="hashtag"># </h2>
-          <h2 class="tagline">SUIT_UP_VYOMNAUTS</h2>
+          <h2 class="tagline">#SUIT_UP_VYOMNAUTS</h2>
         </div>
       </div>
     </div>
@@ -39,9 +38,16 @@
     <script type="text/javascript">
     var h1 = document.getElementById("h1heading");
     var typewriter = document.querySelector(".typewritercontainer");
+    var tagline=document.querySelector(".tagline");
+    const root = document.querySelector(":root");
     h1.addEventListener("animationend", function(){
+    root.style.setProperty("--glitch-visibility", 'visible');
     setTimeout(function(){
-    typewriter.style.display = "none";},2000);
+    h1.innerHTML = "Opening the attachment..."},1000);
+    setTimeout(function(){
+    typewriter.style.display = "none";
+    tagline.style.visibility = 'visible';
+    },3000);
     });
     </script>
     <script src="/static/js/index.js"></script>
