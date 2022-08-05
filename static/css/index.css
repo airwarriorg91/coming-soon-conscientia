@@ -66,7 +66,7 @@ body{
 
 h1{
   color: var(--blue);
-  font-size: 28px;
+  font-size: 2vw;
   font-weight: bold;
   font-family: 'Source Sans Pro', sans-serif;
   letter-spacing: 7px;
@@ -78,7 +78,7 @@ h1{
 
 h2{
   color: var(--blue);
-  font-size: 34px;
+  font-size: 2.4vw;
   font-weight: bold;
   font-family: 'Source Sans Pro', sans-serif;
   letter-spacing: 7px;
@@ -93,7 +93,7 @@ h2{
 .tagline{
   visibility: hidden;
   color: var(--blue);
-  font-size: 28px;
+  font-size: 1.6vw;
   font-weight: 500;
   font-family: 'Source Sans Pro', sans-serif;
   letter-spacing: 5px;
@@ -238,7 +238,7 @@ h2{
   position: absolute;
   color: #3f3;
   font-family: 'VT323', monospace, sans-serif;
-  font-size: 24px;
+  font-size: 1.6vw;
   margin: 10px 30px; /* Gives that scrolling effect as the typing happens */
   letter-spacing: .15em; /* Adjust as needed */
   text-shadow: 0px 0px 3px #3f3;
