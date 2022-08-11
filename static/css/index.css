@@ -83,7 +83,7 @@ h2{
   font-family: 'Source Sans Pro', sans-serif;
   letter-spacing: 7px;
   cursor: text;
-  margin:0px 0px;
+  margin:30px 10px;
   text-align: center;
   text-shadow: 2px 2px 0px var(--accent);
 }
