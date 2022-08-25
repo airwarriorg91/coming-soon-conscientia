@@ -71,7 +71,7 @@ h1{
   font-family: 'Source Sans Pro', sans-serif;
   letter-spacing: 7px;
   cursor: text;
-  margin:30px 10px;
+  margin:20px 10px;
   text-align: center;
   text-shadow: 2px 2px 0px var(--accent);
 } 
@@ -83,12 +83,37 @@ h2{
   font-family: 'Source Sans Pro', sans-serif;
   letter-spacing: 7px;
   cursor: text;
-  margin:30px 10px;
+  margin:10px 10px;
   text-align: center;
   text-shadow: 2px 2px 0px var(--accent);
 }
 
+a{
+  text-decoration: none;
+  color: white;
+  font-size: 1.5vw;
+  font-weight: bold;
+  font-family: 'Source Sans Pro', sans-serif;
+  letter-spacing: 4px;
+  cursor: pointer;
+  text-align: center;
+  margin:10px 10px;
+  text-shadow: 0px 0px 2px var(--accent);
+  
+}
 
+.button{
+  padding:5px;
+  transition: 0.5s;
+  border: 2px solid var(--accent);
+  border-radius: 10px;
+  margin:10px;
+  background-color: var(--primary-light);
+}
+
+.button:hover{
+  border: 3px solid var(--accent);
+}
 
 .tagline{
   visibility: hidden;
