@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Conscientia</title>
+        <link href="{% static '/img/favicon.png'%}" rel="icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Poppins&family=Lato&family=Source+Sans+Pro&family=Hammersmith+One&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/9dde0b24ee.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/static/css/register.css">
+    </head>
+    <body>
+        <div class="formcontainer">
+            <div class="loginposter">
+                <h1 class="headingh1"> Upcoming Workshops</h1>
+                <div class="slider">
+                    <div class="slides">
+                        <input type="radio" name="radio-btn" id="radio1">
+                        <input type="radio" name="radio-btn" id="radio2">
+                        <input type="radio" name="radio-btn" id="radio3">
+                        <input type="radio" name="radio-btn" id="radio4">
+                        <input type="radio" name="radio-btn" id="radio5">
+                        <input type="radio" name="radio-btn" id="radio6">
+                        <input type="radio" name="radio-btn" id="radio7">
+                        <input type="radio" name="radio-btn" id="radio8">
+                        <div class="slide first">
+                            <a href="/static/img/1.jpg">
+                            <img src="static/img/1.jpg">
+                            </a>
+                        </div>
+                        <div class="slide">
+                            <a href="/static/img/2.jpg">
+                            <img src="static/img/2.jpg">
+                            </a>
+                        </div>
+                        <div class="slide">
+                            <a href="/static/img/3.jpg">
+                            <img src="static/img/3.jpg">
+                            </a>
+                        </div>
+                        <div class="slide">
+                            <a href="/static/img/4.jpg">
+                            <img src="static/img/4.jpg">
+                            </a>
+                        </div>
+                        <div class="slide">
+                            <a href="/static/img/5.jpg">
+                            <img src="static/img/5.jpg">
+                            </a>
+                        </div>
+                        <div class="slide">
+                            <a href="/static/img/6.jpg">
+                            <img src="static/img/6.jpg">
+                            </a>
+                        </div>
+                        <div class="slide">
+                            <a href="/static/img/7.jpg">
+                            <img src="static/img/7.jpg">
+                            </a>
+                        </div>
+                        <div class="slide">
+                            <a href="/static/img/8.jpg">
+                            <img src="static/img/8.jpg">
+                            </a>
+                        </div>
+                        <div class="navigation-auto">
+                            <div class="auto-btn1"></div>
+                            <div class="auto-btn2"></div>
+                            <div class="auto-btn3"></div>
+                            <div class="auto-btn4"></div>
+                            <div class="auto-btn5"></div>
+                            <div class="auto-btn6"></div>
+                            <div class="auto-btn7"></div>
+                            <div class="auto-btn8"></div>
+                        </div>
+                        <div class="navigation-manual">
+                            <label for="radio1" class="manual-btn"></label>
+                            <label for="radio2" class="manual-btn"></label>
+                            <label for="radio3" class="manual-btn"></label>
+                            <label for="radio4" class="manual-btn"></label>
+                            <label for="radio5" class="manual-btn"></label>
+                            <label for="radio6" class="manual-btn"></label>
+                            <label for="radio7" class="manual-btn"></label>
+                            <label for="radio8" class="manual-btn"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form">
+                <h1 class="headingh1">Register</h1>
+                <p class="formp">Register yourself for the workshops.</p>
+                <div class="formgroup">
+                    <input type="text" id="name" class="forminput" autocomplete="off" placeholder="&#xf007">
+                    <label for="name" class="formlabel">Name</label>
+                </div>
+                <div class="formgroup">
+                    <input type="text" id="email" class="forminput" autocomplete="off" placeholder="&#xf0e0">
+                    <label for="email" class="formlabel">Email</label>
+                </div>
+                <div class="formgroup">
+                    <input type="password" id="password" class="forminput" autocomplete="off" placeholder="&#xf084">
+                    <label for="password" class="formlabel">Password</label>
+                </div>
+                <div class="formgroup">
+                    <input type="text" id="school" class="forminput" autocomplete="off" placeholder="">
+                    <label for="school" class="formlabel">School/College</label>
+                </div>
+                <span><a href="#"></a></span>
+            </div>
+        </div>
+        <script type="text/javascript">
+        var counter = 1;
+        setInterval(function(){
+        document.getElementById('radio'+ counter).checked = true;
+        counter++;
+        if(counter>8){
+        counter=1;
+        }
+        }, 3000);
+        </script>
+    </body>
+</html>
