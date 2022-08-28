@@ -262,8 +262,8 @@ span a:hover{
 
 .slider{
     width: 330px;
-    height: 466px;
-    border-radius: 20px;
+    height: 490px;
+    border-radius: 5px;
     overflow: hidden;
     margin-bottom: 80px;
 }
@@ -286,7 +286,7 @@ span a:hover{
 
 .slide img{
     width:330px;
-    height:466px;
+    size:a4;
 }
 
 .navigation-manual{

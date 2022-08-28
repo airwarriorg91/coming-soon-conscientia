@@ -330,7 +330,9 @@ a{
     h2{
     font-size: 5.5vw;
     }
-
+    a{
+      font-size: 3.9vw;
+    }
     .tagline{
         font-size: 4vw;
         margin-bottom: 15px;
@@ -372,7 +374,9 @@ a{
     h2{
     font-size: 5vw;
     }
-
+    a{
+      font-size: 3.5vw;
+    }
     .tagline{
         font-size: 4vw;
         margin-bottom: 15px;
