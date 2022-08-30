@@ -36,13 +36,13 @@
                             <div class="auto-btn2"></div>
                         </div>
                         <div class="navigation-manual">
+                            
                             <label for="radio1" class="manual-btn"></label>
                             <label for="radio2" class="manual-btn"></label>
                         </div>
                     </div>
                 </div>
             </div>
-            
             <div class="form">
                 <h1 class="headingh1">Register</h1>
                 <p class="formp">Register yourself for the workshops.</p>
@@ -70,10 +70,39 @@
         setInterval(function(){
         document.getElementById('radio'+ counter).checked = true;
         counter++;
-        if(counter>8){
+        if(counter>2){
         counter=1;
         }
         }, 3000);
+
+        let touchstartX = 0;
+let touchendX = 0;
+    
+function checkDirection() {
+  if (touchendX < touchstartX) {
+    document.getElementById('radio'+ counter).checked = true;
+    counter--;
+    if(1>counter){
+        counter=1;
+        }
+  }
+  if (touchendX > touchstartX) {
+    document.getElementById('radio'+ counter).checked = true;
+    counter++;
+    if(counter>2){
+        counter=1;
+        }
+  }
+}
+
+document.addEventListener('touchstart', e => {
+  touchstartX = e.changedTouches[0].screenX;
+})
+
+document.addEventListener('touchend', e => {
+  touchendX = e.changedTouches[0].screenX;
+  checkDirection();
+})
         </script>
     </body>
 </html>

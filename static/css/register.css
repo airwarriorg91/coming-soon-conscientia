@@ -19,7 +19,7 @@ body{
 
 .formcontainer{
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 60% 40%;
     background-color: rgba(0,0,0,0.5);
     column-gap: 100px;
     height:100vh;
@@ -203,6 +203,13 @@ span a:hover{
   transform: translateZ(-25px) rotateX(-90deg);
 }
 
+button{
+    color:white;
+    font-family: "FontAwesome";
+    text-size:2vw;
+    margin: 0 10px;
+    background-color: transparent;
+}
 .formh1 .underline{
     width: 100%;
     height: 5px;
@@ -265,7 +272,6 @@ span a:hover{
     height: 490px;
     border-radius: 5px;
     overflow: hidden;
-    margin-bottom: 80px;
 }
 
 .slides{
