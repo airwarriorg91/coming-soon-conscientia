@@ -23,12 +23,12 @@
                         <input type="radio" name="radio-btn" id="radio2">
                         <div class="slide first">
                             <a href="/static/aerobrochure.pdf">
-                            <img src="static/img/1.jpg">
+                                <img src="static/img/1.jpg">
                             </a>
                         </div>
                         <div class="slide">
                             <a href="/static/aerobrochure.pdf">
-                            <img src="static/img/2.jpg">
+                                <img src="static/img/2.jpg">
                             </a>
                         </div>
                         <div class="navigation-auto">
@@ -67,6 +67,9 @@
         </div>
         <script type="text/javascript">
         var counter = 1;
+        let touchstartX = 0;
+        let touchendX = 0;
+        if(touchstartX==0){
         setInterval(function(){
         document.getElementById('radio'+ counter).checked = true;
         counter++;
@@ -74,35 +77,32 @@
         counter=1;
         }
         }, 3000);
-
-        let touchstartX = 0;
-let touchendX = 0;
-    
-function checkDirection() {
-  if (touchendX < touchstartX) {
-    document.getElementById('radio'+ counter).checked = true;
-    counter--;
-    if(1>counter){
+        }
+        
+        
+        function checkDirection() {
+        if (touchendX < touchstartX) {
+        document.getElementById('radio'+ counter).checked = true;
+        counter--;
+        if(1>counter){
         counter=1;
         }
-  }
-  if (touchendX > touchstartX) {
-    document.getElementById('radio'+ counter).checked = true;
-    counter++;
-    if(counter>2){
+        }
+        if (touchendX > touchstartX) {
+        document.getElementById('radio'+ counter).checked = true;
+        counter++;
+        if(counter>2){
         counter=1;
         }
-  }
-}
-
-document.addEventListener('touchstart', e => {
-  touchstartX = e.changedTouches[0].screenX;
-})
-
-document.addEventListener('touchend', e => {
-  touchendX = e.changedTouches[0].screenX;
-  checkDirection();
-})
+        }
+        }
+        document.addEventListener('touchstart', e => {
+        touchstartX = e.changedTouches[0].screenX;
+        })
+        document.addEventListener('touchend', e => {
+        touchendX = e.changedTouches[0].screenX;
+        checkDirection();
+        })
         </script>
     </body>
 </html>
