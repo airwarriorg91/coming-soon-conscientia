@@ -67,6 +67,7 @@
             </div>
         </div>
         <script src="/static/js/iziToast.min.js" type="text/javascript"></script>
+        <script src="/static/js/swiped-events.js" type="text/javascript"></script>
         <script type="text/javascript">
         var counter = 1;
         let touchstartX = 0;
@@ -80,31 +81,29 @@
         }
         }, 3000);
         }else{
-        function checkDirection() {
-        if (touchendX > touchstartX) {
-        if(counter>=2){
-            counter=1;
-        }else{
+            document.addEventListener('swiped-left', function(e) {
+             // the element that was swiped
+            if(counter>=2){
+            counter=2;
             document.getElementById('radio'+ counter).checked = true;
+        }else{
             counter++;
-        }
-        
-        }
-        if (touchendX < touchstartX) {
-        if(counter<=1){
-            counter=1;
-        }else{
             document.getElementById('radio'+ counter).checked = true;
+        }
+        console.log('left '+counter);
+        });
+           document.addEventListener('swiped-right', function(e) {
+             // the element that was swiped
+            if(counter<=1){
+            counter=1;
+            document.getElementById('radio'+ counter).checked = true;
+        }else{
             counter--;
-        }}};
-        document.addEventListener('touchstart', e => {
-        touchstartX = e.changedTouches[0].screenX;
-        });
-        document.addEventListener('touchend', e => {
-        touchendX = e.changedTouches[0].screenX;
-        checkDirection();
-        });
+            document.getElementById('radio'+ counter).checked = true;
         };
+        console.log("right " + counter);
+        }); 
+        }
 
         function notify(){
             iziToast.info({
