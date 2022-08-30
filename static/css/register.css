@@ -261,15 +261,16 @@ button{
     letter-spacing: 2px;
     text-align: center;
     width: fit-content;
-    margin-bottom: 13px;
+    margin-top: 30px;
+    margin-bottom: 0px;
     position: relative;
     font-weight: 700;
     text-shadow: 1.5px 1.5px 1.5px var(--accent)
 }
 
 .slider{
-    width: 330px;
-    height: 490px;
+    width: 310px;
+    height: 440px;
     border-radius: 5px;
     overflow: hidden;
 }
@@ -291,14 +292,14 @@ button{
 }
 
 .slide img{
-    width:330px;
+    width:305px;
     size:a4;
 }
 
 .navigation-manual{
-    margin-top:475px;
+    margin-top:440px;
     position:absolute;
-    width:330px;
+    width:310px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -348,9 +349,9 @@ button{
 .navigation-auto{
     position: absolute;
     display:flex;
-    width: 330px;
+    width: 310px;
     justify-content: center;
-    margin-top:475px;
+    margin-top:440px;
     align-items: center;
 }
 
@@ -398,6 +399,10 @@ button{
     height:100%;
     overflow-y: scroll;
   }
+  .headingh2{
+    margin-top:40px;
+    font-size:4.5vw;
+  }
   .formcontainer{
         display:flex;
         flex-direction: column;
@@ -434,12 +439,12 @@ button{
 
     .navigation-manual{
         width:calc(60vh/1.41);
-        margin-top: 65vh;
+        margin-top: 62vh;
     }
 
     .navigation-auto{
         width:calc(60vh/1.41);
-        margin-top: 65vh;
+        margin-top: 62vh;
     }
 
     .slide img{
@@ -492,14 +497,18 @@ button{
         height:60vh;
     } 
 
+    .headingh2{
+        margin-top:50px;
+        font-size:3.5vw;
+    }
     .navigation-manual{
         width:calc(60vh/1.41);
-        margin-top: 65vh;
+        margin-top: 62vh;
     }
 
     .navigation-auto{
         width:calc(60vh/1.41);
-        margin-top: 65vh;
+        margin-top: 62vh;
     }
 
     .slide img{

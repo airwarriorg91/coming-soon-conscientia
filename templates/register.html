@@ -12,6 +12,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Poppins&family=Lato&family=Source+Sans+Pro&family=Hammersmith+One&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/9dde0b24ee.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="/static/css/register.css">
+        <link rel="stylesheet" href="/static/css/iziToast.min.css">
     </head>
     <body>
         <div class="formcontainer">
@@ -22,12 +23,12 @@
                         <input type="radio" name="radio-btn" id="radio1">
                         <input type="radio" name="radio-btn" id="radio2">
                         <div class="slide first">
-                            <a href="/static/aerobrochure.pdf">
+                            <a href="/static/aerobrochure.pdf" id="poster1">
                                 <img src="static/img/1.jpg">
                             </a>
                         </div>
                         <div class="slide">
-                            <a href="/static/aerobrochure.pdf">
+                            <a href="/static/aerobrochure.pdf" id="poster2">
                                 <img src="static/img/2.jpg">
                             </a>
                         </div>
@@ -36,12 +37,12 @@
                             <div class="auto-btn2"></div>
                         </div>
                         <div class="navigation-manual">
-                            
                             <label for="radio1" class="manual-btn"></label>
                             <label for="radio2" class="manual-btn"></label>
                         </div>
                     </div>
                 </div>
+                <h2 class="headingh2">Click on posters, to know more!<h2>
             </div>
             <div class="form">
                 <h1 class="headingh1">Register</h1>
@@ -65,11 +66,12 @@
                 <span><a href="#"></a></span>
             </div>
         </div>
+        <script src="/static/js/iziToast.min.js" type="text/javascript"></script>
         <script type="text/javascript">
         var counter = 1;
         let touchstartX = 0;
         let touchendX = 0;
-        if(touchstartX==0){
+        if(screen.width>=1024){
         setInterval(function(){
         document.getElementById('radio'+ counter).checked = true;
         counter++;
@@ -77,32 +79,41 @@
         counter=1;
         }
         }, 3000);
-        }
-        
-        
+        }else{
         function checkDirection() {
-        if (touchendX < touchstartX) {
-        document.getElementById('radio'+ counter).checked = true;
-        counter--;
-        if(1>counter){
-        counter=1;
-        }
-        }
         if (touchendX > touchstartX) {
-        document.getElementById('radio'+ counter).checked = true;
-        counter++;
-        if(counter>2){
-        counter=1;
+        if(counter>=2){
+            counter=1;
+        }else{
+            document.getElementById('radio'+ counter).checked = true;
+            counter++;
         }
+        
         }
-        }
+        if (touchendX < touchstartX) {
+        if(counter<=1){
+            counter=1;
+        }else{
+            document.getElementById('radio'+ counter).checked = true;
+            counter--;
+        }}};
         document.addEventListener('touchstart', e => {
         touchstartX = e.changedTouches[0].screenX;
-        })
+        });
         document.addEventListener('touchend', e => {
         touchendX = e.changedTouches[0].screenX;
         checkDirection();
-        })
+        });
+        }
+        function notify(){
+            iziToast.info({
+            title: 'Download Started',
+            message: 'The brochure download has started.',
+});
+        };
+
+        document.getElementById('poster1').addEventListener('onclick', notify());
+        document.getElementById('poster2').addEventListener('onclick', notify());
         </script>
     </body>
 </html>
