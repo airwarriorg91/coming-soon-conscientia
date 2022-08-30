@@ -23,12 +23,12 @@
                         <input type="radio" name="radio-btn" id="radio1">
                         <input type="radio" name="radio-btn" id="radio2">
                         <div class="slide first">
-                            <a href="/static/aerobrochure.pdf" id="poster1">
+                            <a href="/static/aerobrochure.pdf" id="poster1" onclick="notify()">
                                 <img src="static/img/1.jpg">
                             </a>
                         </div>
                         <div class="slide">
-                            <a href="/static/aerobrochure.pdf" id="poster2">
+                            <a href="/static/aerobrochure.pdf" id="poster2" onclick="notify()">
                                 <img src="static/img/2.jpg">
                             </a>
                         </div>
@@ -104,16 +104,14 @@
         touchendX = e.changedTouches[0].screenX;
         checkDirection();
         });
-        }
+        };
+
         function notify(){
             iziToast.info({
             title: 'Download Started',
             message: 'The brochure download has started.',
-});
+            });
         };
-
-        document.getElementById('poster1').addEventListener('onclick', notify());
-        document.getElementById('poster2').addEventListener('onclick', notify());
         </script>
     </body>
 </html>
