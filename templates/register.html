@@ -63,7 +63,7 @@
                     <input type="text" id="school" class="forminput" autocomplete="off" placeholder="&#xf549">
                     <label for="school" class="formlabel">School/College</label>
                 </div>
-                <span><a href="#"></a></span>
+                <span><a href="#" onclick="notify2()"></a></span>
             </div>
         </div>
         <script src="/static/js/iziToast.min.js" type="text/javascript"></script>
@@ -109,6 +109,12 @@
             iziToast.info({
             title: 'Download Started',
             message: 'The brochure download has started.',
+            });
+        };
+        function notify2(){
+            iziToast.info({
+            title: 'Registration to start soon',
+            message: 'The registrations for the workshops will begin soon. Please, come back.',
             });
         };
         </script>
