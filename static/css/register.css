@@ -110,27 +110,75 @@ body{
 .forminput:focus{
         border-color: var(--primary);
 }
-.formselect{
-        position:absolute;
-        top:0;
-        left: 0;
-        width:108%;
-        border: 3px solid #fff;
+.select-field{
+        height: fit-content;
+        display:flex;
+        flex-direction: row;
+        width:107%;
+        border: 4px solid #fff;
         border-radius: 10px;
         outline: none;
-        padding: 15px 30px;
-        background:transparent; 
+        background:none; 
         color:#fff;
         font-size: 16px;
-
 }
-
-.formselect:hover{
+.select-field:hover{
         border-color: var(--primary-dark);
 }
 
-.formselect:focus{
+.select-field:focus{
         border-color: var(--primary);
+}
+.selectlabel{
+        font-size:16px;
+        color:#fff;
+        cursor:pointer;
+        height:fit-content;
+        display:flex;
+        justify-content: center;
+        margin-left: 10px;
+        margin-top: 12px;
+        margin-bottom: 12px;
+        font-family: 'Nunito', sans-serif, "FontAwesome";
+}
+.selectlabel:nth-child(1){
+    margin-left:20px;
+}
+.selectlabel:nth-child(3){
+    position: absolute;
+    right:0;
+}
+.task{
+    background-color: none;
+}
+.task,.list{
+    width: 100%;
+    padding: 0.3rem;
+    z-index: 999;
+}
+.list{
+    background-color: rgba(255,255,255,0.3);
+    box-shadow: 0 30px 60px rgb(0,0,0,0.2);
+    display: none;
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+}
+.down-arrow{
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s linear;
+    font-family: "FontAwesome";
+    min-height: fit-content;
+}
+.task{
+    display: block;
+    padding-left: 0;
+}
+.task:hover{
+    background-color: aliceblue;
+}
+.show{
+    display: block;
 }
 
 .formlabel{
@@ -153,13 +201,6 @@ body{
 .forminput:focus ~ .formlabel, 
 .forminput:not(:placeholder-shown).forminput:not(:focus) ~ .formlabel{
     display:none;
-}
-
-.formoption{
-    background-color: transparent;
-    color: #000;
-    font-size:16px;
-    font-family: 'Nunito', sans-serif, "FontAwesome";
 }
 
 .signup{
