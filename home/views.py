@@ -9,3 +9,6 @@ def register(request):
 
 def events(request):
     return render(request,'fork.html')
+
+def register2(request):
+    return render(request,'register2.html')
