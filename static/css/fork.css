@@ -47,9 +47,10 @@ body{
   margin:10px;
   height:fit-content;
   border-radius:10px;
+  text-decoration: none;
 }
 .links a:hover{
-  background-color: var(--blue-dark);
+  background-color: var(--primary);
 }
 .logo-container{
   display:flex;
@@ -121,6 +122,19 @@ body{
     position: relative;
     font-weight: 700;
     text-shadow: 1.5px 1.5px 1.5px var(--accent);
+}
+
+.headingh2button{
+    color:#FFF;
+    font-size: 20px;
+    font-family: "Source Sans Pro", sans-serif;
+    letter-spacing: 2px;
+    text-align: center;
+    width: fit-content;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    position: relative;
+    font-weight: 700;
 }
 
 .workshopscontainer, .gamingcontainer{

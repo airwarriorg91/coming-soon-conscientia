@@ -21,6 +21,9 @@
           <h1 id="h1heading">"4th - 7th November 2022, Set the dates !" </h1>
         </div>
       </div>
+      <div class="Skip">
+        <a onclick="skip()">Skip</a>
+      </div>
     </div>
     <div class="homecontainer">
       <div class="columnb">
@@ -50,6 +53,10 @@
     tagline.style.visibility = 'visible';
     },4000);
     });
+    function skip(){
+      typewriter.style.display = "none";
+      tagline.style.visibility = 'visible';
+    }
     </script>
     <script src="/static/js/index.js"></script>
   </body>
