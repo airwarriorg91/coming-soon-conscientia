@@ -50,7 +50,7 @@ body{
   text-decoration: none;
 }
 .links a:hover{
-  background-color: var(--primary);
+  background-color: var(--blue-dark);
 }
 .logo-container{
   display:flex;
@@ -135,6 +135,7 @@ body{
     margin-bottom: 0px;
     position: relative;
     font-weight: 700;
+    text-decoration: none;
 }
 
 .workshopscontainer, .gamingcontainer{

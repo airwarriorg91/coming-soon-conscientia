@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'home', 
+    'account'
 ]
 
 MIDDLEWARE = [
@@ -134,3 +136,11 @@ STATICFILES_DIRS = [
 ]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 django_heroku.settings(locals())
+
+EMAIL_HOST = 'smtpout.secureserver.net'  #os.environ.get('EMAIL_HOST')
+EMAIL_HOST_USER = 'contact@conscientia.co.in' #os.environ.get('EMAIL_HOST_USER')
+EMAIL_USE_SSL = False
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = '"Team Conscientia" <contact@conscientia.co.in>'  #os.environ.get('EMAIL_HOST_USER')
+EMAIL_PORT = 80
+EMAIL_HOST_PASSWORD = 'conscientia2k22@iist$#'  #os.environ.get('EMAIL_HOST_PASSWORD')

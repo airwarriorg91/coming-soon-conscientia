@@ -15,6 +15,9 @@
         <link rel="stylesheet" href="/static/css/iziToast.min.css">
     </head>
     <body>
+        <!-- <form action="/account/save/" method="post" class="'formcontainer"> -->
+            <!-- {% csrf_token %} -->
+            <!-- <form action="" method="post"> -->
         <div class="formcontainer">
             <div class="loginposter">
                 <h1 class="headingh1"> Upcoming Workshops</h1>
@@ -24,12 +27,12 @@
                         <input type="radio" name="radio-btn" id="radio2">
                         <div class="slide first">
                             <a href="/static/aerobrochure.pdf" id="poster1" onclick="notify()">
-                                <img src="static/img/1.jpg">
+                                <img src="/static/img/1.jpg">
                             </a>
                         </div>
                         <div class="slide">
                             <a href="/static/aerobrochure.pdf" id="poster2" onclick="notify()">
-                                <img src="static/img/2.jpg">
+                                <img src="/static/img/2.jpg">
                             </a>
                         </div>
                         <div class="navigation-auto">
@@ -42,25 +45,27 @@
                         </div>
                     </div>
                 </div>
-                <h2 class="headingh2">Click on posters, to know more!</h2>
+                <h2 class="headingh2">Click on posters, to know more!<h2>
             </div>
-            <form class="form">
+            
+            <form action="/account/save/" method="post" class="form">
+                {% csrf_token %}
                 <h1 class="headingh1">Register</h1>
                 <p class="formp">Register yourself for the workshops.</p>
                 <div class="formgroup">
-                    <input type="text" id="name" class="forminput" autocomplete="off" placeholder="&#xf007">
+                    <input name="name" type="text" id="name" class="forminput" autocomplete="off" placeholder="&#xf007">
                     <label for="name" class="formlabel">Name</label>
                 </div>
                 <div class="formgroup">
-                    <input type="text" id="email" class="forminput" autocomplete="off" placeholder="&#xf0e0">
+                    <input name="email" type="text" id="email" class="forminput" autocomplete="off" placeholder="&#xf0e0">
                     <label for="email" class="formlabel">Email</label>
                 </div>
                 <div class="formgroup">
-                    <input type="password" id="password" class="forminput" autocomplete="off" placeholder="&#xf084">
+                    <input name="password" type="password" id="password" class="forminput" autocomplete="off" placeholder="&#xf084">
                     <label for="password" class="formlabel">Password</label>
                 </div>
                 <div class="formgroup">
-                    <input type="text" id="school" class="forminput" autocomplete="off" placeholder="&#xf549">
+                    <input name="college" type="text" id="school" class="forminput" autocomplete="off" placeholder="&#xf549">
                     <label for="school" class="formlabel">School/College</label>
                 </div>
                 <input type="submit" value="Submit" class="signup">

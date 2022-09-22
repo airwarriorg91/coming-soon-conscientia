@@ -62,23 +62,23 @@
                         
                         <label for="task1" class="task">
                             <input type="checkbox" name="" id="task1">
-                            Aeroclub Workshop
+                            Task 1
                         </label>
                         <label for="task2" class="task">
                             <input type="checkbox" name="" id="task2">
-                            MATLAB Workshop
+                            Task 2
                         </label>
                         <label for="task3" class="task">
                             <input type="checkbox" name="" id="task3">
-                            Astronomy Workshop
+                            Task 3
                         </label>
                         <label for="task4" class="task">
                             <input type="checkbox" name="" id="task4">
-                            Rocketeers Workshop
+                            Task 4
                         </label>
                     </div>
                 </div>
-            <input type="submit" value="Submit" class="signup" id="submit">
+            <span><a href="#" onclick="notify2()"></a></span>
         </form>
     </div>
     <script src="/static/js/iziToast.min.js" type="text/javascript"></script>
@@ -134,11 +134,8 @@
     document.querySelector('.select-field').addEventListener('click',()=>{
     document.querySelector('.list').classList.toggle('show');
     if(document.querySelector('.list').classList.contains('show')){
-    document.getElementById("arrow").innerHTML="&#xf0d8";
-    document.getElementById("submit").style.display = 'none'
-    }else{
+    document.getElementById("arrow").innerHTML="&#xf0d8";}else{
         document.getElementById("arrow").innerHTML="&#xf0d7";
-        document.getElementById("submit").style.display = 'flex'
     }
     });
     </script>
