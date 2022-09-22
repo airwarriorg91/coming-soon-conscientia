@@ -1,1 +1,0 @@
-web: gunicorn comingsoon.wsgi:application --log-file -
