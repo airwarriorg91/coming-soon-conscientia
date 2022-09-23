@@ -19,7 +19,7 @@ from django.views.generic import View
 from .tokens import token_generator
 
 # Create your views here.
-@method_decorator(csrf_protect)
+@csrf_protect
 def saveAccount(request):
 #     return render(request, 'noop.html')
 
