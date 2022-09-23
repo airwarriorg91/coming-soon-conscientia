@@ -74,7 +74,7 @@
                         </label>
                     </div>
                 </div>
-            <input type="submit" value="Submit" class="signup">
+            <input type="submit" value="Submit" class="signup" id='submit'>
         </form>
     </div>
     <script src="/static/js/iziToast.min.js" type="text/javascript"></script>
@@ -130,9 +130,13 @@
     document.querySelector('.select-field').addEventListener('click',()=>{
     document.querySelector('.list').classList.toggle('show');
     if(document.querySelector('.list').classList.contains('show')){
-    document.getElementById("arrow").innerHTML="&#xf0d8";}else{
+    document.getElementById("arrow").innerHTML="&#xf0d8";
+    document.getElementById('submit').style.display='none';
+    }else{
         document.getElementById("arrow").innerHTML="&#xf0d7";
+        document.getElementById('submit').style.display='flex';
     }
+
     });
     </script>
 </body>

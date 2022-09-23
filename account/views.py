@@ -53,7 +53,7 @@ def saveAccount(request):
 
             email_body = f"Hi there, {name}!\n" \
             f"Please use this link to verify your account. \n Link:{activate_url}\n"\
-            "\n"
+            "\n"\
             "Regards,\n"\
             "Team Conscientia\n"\
             "Indian Institute of Space Science and Technology\n"\
