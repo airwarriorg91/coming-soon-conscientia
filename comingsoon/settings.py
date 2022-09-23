@@ -27,12 +27,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-9(n*z7n#rzn-!f5ncatgx1-@42-6xyaw6gzqi*mvh2rdxt_=9n'
 
 
-#enivron variables
-EMAIL_HOST = 'abcd'
-EMAIL_HOST_USER = 'abcd'
-DEFAULT_FROM_EMAIL = 'abcd'
-EMAIL_HOST_PASSWORD = 'abcd'
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -146,10 +140,19 @@ STATICFILES_DIRS = [
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 django_heroku.settings(locals())
 
-EMAIL_HOST = str(os.environ['EMAIL_HOST'])
-EMAIL_HOST_USER = str(os.environ['EMAIL_HOST_USER'])
-EMAIL_USE_SSL = False
-EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = str(os.environ['DEFAULT_FROM_EMAIL'])
-EMAIL_PORT = 80
-EMAIL_HOST_PASSWORD = str(os.environ['EMAIL_HOST_PASSWORD'])
+try:
+    EMAIL_HOST = os.environ['EMAIL_HOST']
+    EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
+    EMAIL_USE_SSL = False
+    EMAIL_USE_TLS = True
+    DEFAULT_FROM_EMAIL = os.environ['DEFAULT_FROM_EMAIL']
+    EMAIL_PORT = 80
+    EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
+except KeyError:
+    EMAIL_HOST = 'abcd'
+    EMAIL_HOST_USER = 'abcd'
+    EMAIL_USE_SSL = False
+    EMAIL_USE_TLS = True
+    DEFAULT_FROM_EMAIL = 'abcd'
+    EMAIL_PORT = 80
+    EMAIL_HOST_PASSWORD = 'abcd'
