@@ -70,8 +70,8 @@ def saveAccount(request):
             print('sent successfully')
             context['status'] = 'True'
             context['user_name'] = user.username
-            return render('verification.html', context=context)
-    return render("verification.html", context=context)
+            return render(request,'verification.html', context=context)
+    return render(request,"verification.html", context=context)
 
 def authenticate_defined(request):
     username = request.POST['username']
