@@ -149,10 +149,10 @@ try:
     EMAIL_PORT = 80
     EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
 except KeyError:
-    EMAIL_HOST = 'abcd'
-    EMAIL_HOST_USER = 'abcd'
+    EMAIL_HOST = 'smtpout.secureserver.net'
+    EMAIL_HOST_USER = 'no-reply@conscientia.co.in'
     EMAIL_USE_SSL = False
     EMAIL_USE_TLS = True
-    DEFAULT_FROM_EMAIL = 'abcd'
+    DEFAULT_FROM_EMAIL = '"Team Conscientia" <no-reply@conscientia.co.in>'
     EMAIL_PORT = 80
-    EMAIL_HOST_PASSWORD = 'abcd'
+    EMAIL_HOST_PASSWORD = 'web@conscientia2k22$#123'

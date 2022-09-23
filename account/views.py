@@ -51,7 +51,8 @@ def saveAccount(request):
             activate_url = 'https://' + domain + link
             email_subject = 'Activate your account'
 
-            email_body = f"""Hi there, {user.username}! 
+            email_body = f"""
+            Hi there, {user.username}! 
             Please use this link to verify your account \n{activate_url}.
 
             Regards,
