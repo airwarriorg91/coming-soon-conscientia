@@ -26,6 +26,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-9(n*z7n#rzn-!f5ncatgx1-@42-6xyaw6gzqi*mvh2rdxt_=9n'
 
+
+#enivron variables
+EMAIL_HOST = 'abcd'
+EMAIL_HOST_USER = 'abcd'
+DEFAULT_FROM_EMAIL = 'abcd'
+EMAIL_HOST_PASSWORD = 'abcd'
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
