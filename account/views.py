@@ -51,15 +51,13 @@ def saveAccount(request):
             activate_url = 'https://' + domain + link
             email_subject = 'Activate your account'
 
-            email_body = f"""
-            Hi there, {user.username}! 
-            Please use this link to verify your account \n{activate_url}.
-
-            Regards,
-            Team Conscientia
-            Indian Institute of Space Science and Technology
-            Thiruvanthapuram
-            contact@conscientia.co.in"""
+            email_body = f"Hi there, {name}!\n" \
+            f"Please use this link to verify your account. \n Link:{activate_url}\n"\
+            "Regards,\n"\
+            "Team Conscientia\n"\
+            "Indian Institute of Space Science and Technology\n"\
+            "Thiruvanthapuram\n"\
+            "contact@conscientia.co.in"
             
             email_msg = EmailMessage(
                 email_subject,
@@ -70,7 +68,7 @@ def saveAccount(request):
             email_msg.send()
             print('sent successfully')
             context['status'] = 'True'
-            context['user_name'] = user.username
+            context['user_name'] = name
             return render(request,'verification.html', context=context)
     return render(request,"verification.html", context=context)
 
