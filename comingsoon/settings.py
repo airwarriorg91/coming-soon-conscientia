@@ -145,4 +145,4 @@ EMAIL_USE_SSL = False
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = '"Team Conscientia" <contact@conscientia.co.in>'  #os.environ.get('EMAIL_HOST_USER')
 EMAIL_PORT = 80
-EMAIL_HOST_PASSWORD = 'conscientia2k22@iist$#'  #os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_PASSWORD = 'abcd'  #os.environ.get('EMAIL_HOST_PASSWORD')
