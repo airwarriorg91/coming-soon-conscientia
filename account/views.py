@@ -51,7 +51,14 @@ def saveAccount(request):
             activate_url = 'https://' + domain + link
             email_subject = 'Activate your account'
 
-            email_body = f'Hi there!, {user.username} use this link to verify your account \n{activate_url}'
+            email_body = f"""Hi there, {user.username}! 
+            Please use this link to verify your account \n{activate_url}.
+
+            Regards,
+            Team Conscientia
+            Indian Institute of Space Science and Technology
+            Thiruvanthapuram
+            contact@conscientia.co.in"""
             
             email_msg = EmailMessage(
                 email_subject,
