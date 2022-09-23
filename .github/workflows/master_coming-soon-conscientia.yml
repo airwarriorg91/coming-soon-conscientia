@@ -30,13 +30,15 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
         
-      - name: to make migrations
+      - name: making migrations
         run: python manage.py makemigrations
       
       
-      - name: to migrate
+      - name: now migrating
         run: python manage.py migrate
         
+      - name: creating super user
+        run: echo "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser('gaurav', 'gauravxpgupta@gmail.com', 'iav8')" | python manage.py shell
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
       
       - name: Upload artifact for deployment jobs
