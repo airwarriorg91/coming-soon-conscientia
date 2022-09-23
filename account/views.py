@@ -18,7 +18,10 @@ from django.views.generic import View
 
 from .tokens import token_generator
 
+from django.views.decorators.csrf import csrf_protect
+
 # Create your views here.
+@csrf_protect
 def saveAccount(request):
 #     return render(request, 'noop.html')
 
