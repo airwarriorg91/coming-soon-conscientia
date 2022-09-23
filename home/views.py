@@ -12,3 +12,6 @@ def events(request):
 
 def register2(request):
     return render(request,'register2.html')
+
+def verify(request):
+    return render(request,'verification.html')

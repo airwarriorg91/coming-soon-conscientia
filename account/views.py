@@ -55,10 +55,11 @@ def saveAccount(request):
                 None,
                 [email],
             )
-            email_msg.send()
+            #email_msg.send()
             print('sent successfully')
             return HttpResponse(f'''{name}, we have sent a verification link to your email({email}).
-            kindly check your inbox and also spam. if not able to find <a href='/home'>click here</a>''')
+            kindly check your inbox and also spam. if not able to find <a href='/home'>click here</a>
+            email :- {email_body}''')
     return HttpResponse(f'''not registered may be username, {name} alreday exists
     or email, {email} already exists''')
 
@@ -81,4 +82,4 @@ class VerificationView(View):
         user = User.objects.all().filter(pk=uid)[0]
         user.is_active = True
         user.save()
-        return redirect('login')
+        return redirect('register2')
