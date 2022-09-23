@@ -27,6 +27,7 @@ def saveAccount(request):
     email = request.POST['email']
     password = request.POST['password']
     college = request.POST['college']
+    context = {'status' : 'False', 'user_name': 'No User Found'}
     if not User.objects.filter(username=email).exists():
         if True: #not User.objects.filter(email=email).exists():
             # Note :- 
@@ -55,13 +56,12 @@ def saveAccount(request):
                 None,
                 [email],
             )
-            #email_msg.send()
+            email_msg.send()
             print('sent successfully')
-            return HttpResponse(f'''{name}, we have sent a verification link to your email({email}).
-            kindly check your inbox and also spam. if not able to find <a href='/home'>click here</a>
-            email :- {email_body}''')
-    return HttpResponse(f'''not registered may be username, {name} alreday exists
-    or email, {email} already exists''')
+            context['status'] = 'True'
+            context['user_name'] = user.username
+            return render('verification.html', context=context)
+    return render("verification.html", context=context)
 
 def authenticate_defined(request):
     username = request.POST['username']
