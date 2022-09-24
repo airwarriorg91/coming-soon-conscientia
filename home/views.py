@@ -11,7 +11,8 @@ def events(request):
     return render(request,'fork.html')
 
 def register2(request):
-    return render(request,'register2.html')
+    return HttpResponse('user = ' + request.user + ' status = ' + request.user.is_active)
+    #return render(request,'register2.html')
 
 def verify(request):
     return render(request,'verification.html')
