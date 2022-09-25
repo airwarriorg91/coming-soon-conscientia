@@ -20,12 +20,35 @@ from .tokens import token_generator
 
 from django.views.decorators.csrf import csrf_protect
 
+
+def createEmail(request, user):
+    uidb64 = urlsafe_base64_encode(force_bytes(user.pk))
+    domain = get_current_site(request).domain
+    link = reverse('activate', kwargs={'uidb64':uidb64, 'token':token_generator.make_token(user)})
+    activate_url = 'https://' + domain + link
+    email_subject = 'Activate your account'
+
+    email_body = f"Hi there, {user.first_name}!\n" \
+    f"Please use this link to verify your account. \n Link:{activate_url}\n"\
+    "\n"\
+    "Regards,\n"\
+    "Team Conscientia\n"\
+    "Indian Institute of Space Science and Technology\n"\
+    "Thiruvanthapuram\n"\
+    "contact@conscientia.co.in"
+    
+    email_msg = EmailMessage(
+        email_subject,
+        email_body,
+        None,
+        [email],
+    )
+    return email_msg
+
+
 # Create your views here.
 @csrf_protect
 def saveAccount(request):
-#     return render(request, 'noop.html')
-
-# def temp(request):
     name = request.POST['name']
     email = request.POST['email']
     password = request.POST['password']
@@ -43,42 +66,21 @@ def saveAccount(request):
             user.is_active = False
             user.save()
 
-            uidb64 = urlsafe_base64_encode(force_bytes(user.pk))
-
-
-            domain = get_current_site(request).domain
-            link = reverse('activate', kwargs={'uidb64':uidb64, 'token':token_generator.make_token(user)})
-            activate_url = 'https://' + domain + link
-            email_subject = 'Activate your account'
-
-            email_body = f"Hi there, {name}!\n" \
-            f"Please use this link to verify your account. \n Link:{activate_url}\n"\
-            "\n"\
-            "Regards,\n"\
-            "Team Conscientia\n"\
-            "Indian Institute of Space Science and Technology\n"\
-            "Thiruvanthapuram\n"\
-            "contact@conscientia.co.in"
-            
-            email_msg = EmailMessage(
-                email_subject,
-                email_body,
-                None,
-                [email],
-            )
+            email_msg = createEmail(request, user)
             email_msg.send()
-            print('sent successfully')
             context['status'] = 'True'
             context['user_name'] = name
             return render(request,'verification.html', context=context)
     return render(request,"verification.html", context=context)
 
-def authenticate_defined(request):
-    username = request.POST['username']
+def loginView(request):
+    email = request.POST['email']
     password = request.POST['password']
-    user = authenticate(username=username, password=password)
+    user = authenticate(username=email, password=password)
     if user is not None:
         login(request, user)
+        if not user.is_active:
+            return redirect('register2')
     redirect('home')
 
 def logout_defined(request):

@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Conscientia</title>
+        <link href="{% static '/img/favicon.png'%}" rel="icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Poppins&family=Lato&family=Source+Sans+Pro&family=Hammersmith+One&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/9dde0b24ee.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/static/css/register.css">
+        <link rel="stylesheet" href="/static/css/iziToast.min.css">
+    </head>
+    <body>
+        <!-- <form action="/account/save/" method="post" class="'formcontainer"> -->
+            <!-- {% csrf_token %} -->
+            <!-- <form action="" method="post"> -->
+        <div class="formcontainer">
+            <div class="loginposter">
+                <h1 class="headingh1"> Upcoming Workshops</h1>
+                <div class="slider">
+                    <div class="slides">
+                        <input type="radio" name="radio-btn" id="radio1">
+                        <input type="radio" name="radio-btn" id="radio2">
+                        <div class="slide first">
+                            <a href="/static/OpenVSP_brochure.pdf" id="poster1" onclick="notify()">
+                                <img src="/static/img/1.jpg">
+                            </a>
+                        </div>
+                        <div class="slide">
+                            <a href="/static/Fusion360_brochure.pdf" id="poster2" onclick="notify()">
+                                <img src="/static/img/2.png">
+                            </a>
+                        </div>
+                        <div class="navigation-auto">
+                            <div class="auto-btn1"></div>
+                            <div class="auto-btn2"></div>
+                        </div>
+                        <div class="navigation-manual">
+                            <label for="radio1" class="manual-btn"></label>
+                            <label for="radio2" class="manual-btn"></label>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="headingh2">Click on posters, to know more!<h2>
+            </div>
+            
+            <form action="/account/save/" method="post" class="form">
+                {% csrf_token %}
+                <h1 class="headingh1">Login</h1>
+                <p class="formp">Login to complete your workshop registration process.</p>
+                <div class="formgroup">
+                    <input name="email" type="text" id="email" class="forminput" autocomplete="off" placeholder="&#xf0e0">
+                    <label for="email" class="formlabel">Email</label>
+                </div>
+                <div class="formgroup">
+                    <input name="password" type="password" id="password" class="forminput" autocomplete="off" placeholder="&#xf084">
+                    <label for="password" class="formlabel">Password</label>
+                </div>
+                <input type="submit" value="Submit" class="signup">
+            </form>
+        </div>
+        <script src="/static/js/iziToast.min.js" type="text/javascript"></script>
+        <script src="/static/js/swiped-events.js" type="text/javascript"></script>
+        <script type="text/javascript">
+        var counter = 1;
+        let touchstartX = 0;
+        let touchendX = 0;
+        if(screen.width>=1024){
+        setInterval(function(){
+        document.getElementById('radio'+ counter).checked = true;
+        counter++;
+        if(counter>2){
+        counter=1;
+        }
+        }, 3000);
+        }else{
+            document.addEventListener('swiped-left', function(e) {
+             // the element that was swiped
+            if(counter>=2){
+            counter=2;
+            document.getElementById('radio'+ counter).checked = true;
+        }else{
+            counter++;
+            document.getElementById('radio'+ counter).checked = true;
+        }
+        console.log('left '+counter);
+        });
+           document.addEventListener('swiped-right', function(e) {
+             // the element that was swiped
+            if(counter<=1){
+            counter=1;
+            document.getElementById('radio'+ counter).checked = true;
+        }else{
+            counter--;
+            document.getElementById('radio'+ counter).checked = true;
+        };
+        console.log("right " + counter);
+        }); 
+        }
+
+        function notify(){
+            iziToast.info({
+            title: 'Download Started',
+            message: 'The brochure download has started.',
+            });
+        };
+        
+        </script>
+    </body>
+</html>
