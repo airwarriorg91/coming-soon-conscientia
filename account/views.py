@@ -95,4 +95,5 @@ class VerificationView(View):
         user = User.objects.all().filter(pk=uid)[0]
         user.is_active = True
         user.save()
+        login(request, user)
         return redirect('register2')
