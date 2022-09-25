@@ -41,7 +41,7 @@ def createEmail(request, user):
         email_subject,
         email_body,
         None,
-        [email],
+        [user.username],
     )
     return email_msg
 
