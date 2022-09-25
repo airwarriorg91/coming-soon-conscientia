@@ -73,6 +73,7 @@ def saveAccount(request):
             return render(request,'verification.html', context=context)
     return render(request,"verification.html", context=context)
 
+@csrf_protect
 def loginView(request):
     email = request.POST['email']
     password = request.POST['password']
