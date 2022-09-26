@@ -66,8 +66,13 @@ def saveAccount(request):
                 user.set_password(password)
                 user.is_active = False
                 user.save()
+                login(request, user)
+    elif request.user == None:
+        return redirect('login')
+    else:
+        pass
 
-    email_msg = createEmail(request, request.user if request.user else user)
+    email_msg = createEmail(request, request.user)
     email_msg.send()
     context['status'] = 'True'
     context['user_name'] = name
