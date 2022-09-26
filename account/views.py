@@ -49,28 +49,29 @@ def createEmail(request, user):
 # Create your views here.
 @csrf_protect
 def saveAccount(request):
-    name = request.POST['name']
-    email = request.POST['email']
-    password = request.POST['password']
-    college = request.POST['college']
-    context = {'status' : 'False', 'user_name': 'No User Found'}
-    if not User.objects.filter(username=email).exists():
-        if True: #not User.objects.filter(email=email).exists():
-            # Note :- 
-                # Name :- First Name
-                # Email :- email, username
-                # password :- password
-                # school :- Second Name
-            user = User.objects.create_user(username=email, email=email, first_name=name, last_name=college)
-            user.set_password(password)
-            user.is_active = False
-            user.save()
+    if request.method == 'POST':
+        name = request.POST['name']
+        email = request.POST['email']
+        password = request.POST['password']
+        college = request.POST['college']
+        context = {'status' : 'False', 'user_name': 'No User Found'}
+        if not User.objects.filter(username=email).exists():
+            if True: #not User.objects.filter(email=email).exists():
+                # Note :- 
+                    # Name :- First Name
+                    # Email :- email, username
+                    # password :- password
+                    # school :- Second Name
+                user = User.objects.create_user(username=email, email=email, first_name=name, last_name=college)
+                user.set_password(password)
+                user.is_active = False
+                user.save()
 
-            email_msg = createEmail(request, user)
-            email_msg.send()
-            context['status'] = 'True'
-            context['user_name'] = name
-            return render(request,'verification.html', context=context)
+    email_msg = createEmail(request, request.user if request.user else user)
+    email_msg.send()
+    context['status'] = 'True'
+    context['user_name'] = name
+    #return render(request,'verification.html', context=context)
     return render(request,"verification.html", context=context)
 
 @csrf_protect
@@ -97,3 +98,14 @@ class VerificationView(View):
         user.save()
         login(request, user)
         return redirect('register2')
+
+def continueView(request):
+    if request.user.is_active:
+        return redirect('login')
+    else:
+        return render(request, 'register2.html')
+
+@csrf_protect
+def eventRegisterView(request):
+    
+
