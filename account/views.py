@@ -58,10 +58,10 @@ def saveAccount(request):
         if not User.objects.filter(username=email).exists():
             if True: #not User.objects.filter(email=email).exists():
                 # Note :- 
-                    # Name :- First Name
-                    # Email :- email, username
-                    # password :- password
-                    # school :- Second Name
+                # Name :- First Name
+                # Email :- email, username
+                # password :- password
+                # school :- Second Name
                 user = User.objects.create_user(username=email, email=email, first_name=name, last_name=college)
                 user.set_password(password)
                 user.is_active = False
@@ -107,5 +107,4 @@ def continueView(request):
 
 @csrf_protect
 def eventRegisterView(request):
-    
-
+    pass
