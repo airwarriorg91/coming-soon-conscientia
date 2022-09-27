@@ -71,7 +71,7 @@ def saveAccount(request):
                 #user.save()
                 #return redirect('login')
                 email_msg = createEmail(request, user)
-                #email_msg.send()
+                email_msg.send()
                 context['status'] = 'True'
                 context['user_name'] = name
                 return render(request,'verification.html', context=context)
@@ -139,5 +139,5 @@ def eventRegisterView(request):
         None,
         [request.user.username],
     )
-    #email_msg.send()
+    email_msg.send()
     return redirect('index')
