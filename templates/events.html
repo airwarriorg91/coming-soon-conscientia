@@ -85,11 +85,11 @@
                 <h1 class="headingh1">Free Fire</h1>
                 <div class="eventspara"><p>We, students of IIST, cordially invite you all to participate in IIST's Free Fire tournament. Join us for the chance to win cash prizes.</p>
 
-<p>Date and Time(Tentative): 10th September 2022, 6-7pm</p>
+                <p>Date and Time(Tentative): 10th September 2022, 6-7pm</p>
 
-<p>Gamemode: Solo BR</p>
+                <p>Gamemode: Solo BR</p>
 
-<p>Any player who can refer 5 other players can play the tournament for free(Entry fee will be refunded upon verification)</p></div>
+                <p>Any player who can refer 5 other players can play the tournament for free(Entry fee will be refunded upon verification)</p></div>
                 <a href="https://forms.gle/zdChS7qewBkGWjhw9" class="eventsbutton" on-click="notify()">Register</a>
             </div>
             <div class="eventitemb">
@@ -161,7 +161,7 @@
         }
         }
         }
-        document.getElementById("workshoptab").click();
+        window.onloadend=function(){document.getElementById("workshoptab").click();};
         function notify(){
             iziToast.info({
             title: 'Download Started',

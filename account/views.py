@@ -121,7 +121,7 @@ def continueView(request):
 
 @csrf_protect
 def eventRegisterView(request):
-    event_name = {'event1':'OpenVSP', 'event2':'Fusion360', 'event3':'Ansys Simulation', 'event4':''}
+    event_name = {'event1':'OpenVSP', 'event2':'Fusion360', 'event3':'Simulations', 'event4':''}
     eventnames = ''
     if request.method == 'POST':
         events = request.POST.getlist('event[]')
@@ -131,8 +131,8 @@ def eventRegisterView(request):
             eventnames += event_name[event] + ' ,'
 
     email_body = f"Hello {request.user.first_name}!\n"\
-"Thank you for registering in the workshops. You have registered for the following workshops,"\
-f"events :- {eventnames[:-2]}\n"\
+"Thank you for registering in the workshops. You have registered for the following workshops,\n"\
+f"Selected Events :- {eventnames[:-2]}\n"\
 "To confirm your participation, kindly deposit your Workshop Fees (Rs.100/Workshop) to this UPI ID: akash629001@okhdfcbank. "\
 "Allow us to confirm your payment and we will get back to you within 24 hours. For any queries, consider contacting us through the phone numbers or email us at contact@conscientia.co.in (Please try to reach us after 5 PM on weekdays).\n"\
 "\n"\

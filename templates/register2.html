@@ -71,7 +71,7 @@
                         </label>
                         <label for="task3" class="task">
                             <input type="checkbox" name="event[]" value="event3" id="task3">
-                            Task 3
+                            Simulations Workshop
                         </label>
                     </div>
                 </div>
@@ -127,6 +127,9 @@
     if(document.querySelector('.list').classList.contains('show')){
     document.getElementById("arrow").innerHTML="&#xf0d8";
     document.getElementById('submit').style.display='none';
+    window.onclick=function(){
+        document.querySelector('.list').classList.toggle('show');
+    }
     }else{
         document.getElementById("arrow").innerHTML="&#xf0d7";
         document.getElementById('submit').style.display='flex';
