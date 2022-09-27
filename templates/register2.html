@@ -22,6 +22,7 @@
                     <div class="slides">
                         <input type="radio" name="radio-btn" id="radio1">
                         <input type="radio" name="radio-btn" id="radio2">
+                        <input type="radio" name="radio-btn" id="radio3">
                         <div class="slide first">
                             <a href="/static/OpenVSP_borchure.pdf" id="poster1" onclick="notify()">
                                 <img src="/static/img/1.jpg">
@@ -32,19 +33,26 @@
                                 <img src="/static/img/2.png">
                             </a>
                         </div>
+                        <div class="slide">
+                            <a href="/static/Simulation_brochure.pdf" id="poster3" onclick="notify()">
+                                <img src="/static/img/3.png">
+                            </a>
+                        </div>
                         <div class="navigation-auto">
                             <div class="auto-btn1"></div>
                             <div class="auto-btn2"></div>
+                            <div class="auto-btn3"></div>
                         </div>
                         <div class="navigation-manual">
                             <label for="radio1" class="manual-btn"></label>
                             <label for="radio2" class="manual-btn"></label>
+                            <label for="radio3" class="manual-btn"></label>
                         </div>
                     </div>
                 </div>
                 <h2 class="headingh2">Click on posters, to know more!<h2>
             </div>
-            <form class="form" method='post' action="{% url 'eventRegister' %}">
+            <form class="form" method='post' action="{% url 'eventRegister' %}" >
                 {% csrf_token %}
                 <h1 class="headingh1">Registration</h1>
                 <p class="formp">Complete your registration for workshop.</p>
@@ -53,7 +61,7 @@
                     <label for="phone" class="formlabel">Phone</label>
                 </div>
                 <div class="formgroup">
-                    <div class="select-field">
+                    <div class="select-field" id="dropbox">
                         <label class="selectlabel">&#xf03a</label>
                         <label class="selectlabel">Select the workshops</label>
                         <label class="selectlabel" id="arrow">&#xf0d7</label>
@@ -88,15 +96,15 @@
     setInterval(function(){
     document.getElementById('radio'+ counter).checked = true;
     counter++;
-    if(counter>2){
+    if(counter>3){
     counter=1;
     }
     }, 3000);
     }else{
     document.addEventListener('swiped-left', function(e) {
     // the element that was swiped
-    if(counter>=2){
-    counter=2;
+    if(counter>=3){
+    counter=3;
     document.getElementById('radio'+ counter).checked = true;
     }else{
     counter++;
@@ -127,15 +135,22 @@
     if(document.querySelector('.list').classList.contains('show')){
     document.getElementById("arrow").innerHTML="&#xf0d8";
     document.getElementById('submit').style.display='none';
-    document.getElementbyId('container')onclick=function(){
-        document.querySelector('.list').classList.toggle('show');
-    }
     }else{
         document.getElementById("arrow").innerHTML="&#xf0d7";
         document.getElementById('submit').style.display='flex';
     }
-
     });
+
+    document.addEventListener("click",function (e){
+        if(!e.target.closest('#dropbox') && !e.target.closest(".list")){
+            if(document.querySelector('.list').classList.contains('show')){
+        document.querySelector('.list').classList.remove('show');
+        document.getElementById("arrow").innerHTML="&#xf0d7";
+        document.getElementById('submit').style.display='flex';
+        }
+        }
+    });
+    
     </script>
 </body>
 </html>
