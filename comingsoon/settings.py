@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-9(n*z7n#rzn-!f5ncatgx1-@42-6xyaw6gzqi*mvh2rdxt_=9n
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['https://conscientia.co.in']
 
