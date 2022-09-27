@@ -54,7 +54,7 @@ def saveAccount(request):
         email = request.POST['email']
         password = request.POST['password']
         college = request.POST['college']
-        context = {'status' : 'False', 'user_name': 'No User Found'}
+        context = {'status' : 'True', 'user_name': name}
         if not User.objects.filter(username=email).exists():
             if True: #not User.objects.filter(email=email).exists():
                 # Note :- 
@@ -66,33 +66,42 @@ def saveAccount(request):
                 user.set_password(password)
                 user.is_active = False
                 user.save()
-                login(request, user)
-    elif request.user == None:
-        return redirect('login')
-    else:
-        pass
+                #user = authenticate(request, username=email, password=password)
+                #login(request, user)
+                #user.save()
+                #return redirect('login')
+                email_msg = createEmail(request, user)
+                email_msg.send()
+                context['status'] = 'True'
+                context['user_name'] = name
+                return render(request,'verification.html', context=context)
+        return render(request,"verification.html", context=context)
 
-    email_msg = createEmail(request, request.user)
-    email_msg.send()
-    context['status'] = 'True'
-    context['user_name'] = name
-    #return render(request,'verification.html', context=context)
-    return render(request,"verification.html", context=context)
 
 @csrf_protect
 def loginView(request):
-    email = request.POST['email']
-    password = request.POST['password']
-    user = authenticate(username=email, password=password)
-    if user is not None:
+    context = {'message':None}
+    if request.method == 'POST':
+        email = request.POST['email']
+        password = request.POST['password']
+        user = authenticate(username=email, password=password)
         login(request, user)
-        if not user.is_active:
+        user.save()
+    else:
+        context['message'] = 'Check your email/password again'
+        return render(request, 'login.html', context=context)
+    # user = request.user
+    # print(user)
+    if user is not None:
+        if user.is_active:
             return redirect('register2')
-    redirect('home')
+        else:
+            return redirect('save')
+    return redirect('index')
 
 def logout_defined(request):
     request.user.logout()
-    redirect('home')
+    redirect('index')
 
 
 class VerificationView(View):
@@ -101,15 +110,35 @@ class VerificationView(View):
         user = User.objects.all().filter(pk=uid)[0]
         user.is_active = True
         user.save()
-        login(request, user)
-        return redirect('register2')
+        # login(request, user)
+        return redirect('login')
 
 def continueView(request):
     if request.user.is_active:
-        return redirect('login')
-    else:
         return render(request, 'register2.html')
+    else:
+        return redirect('verification')
 
 @csrf_protect
 def eventRegisterView(request):
-    pass
+    email_body = f"Hello {request.user.first_name}!\n"\
+"Thank you for registering in the workshops. You have registered for the following workshops,"\
+"To confirm your participation, kindly deposit your Workshop Fees (Rs.100/Workshop) to this UPI ID: akash629001@okhdfcbank"\
+"Allow us to confirm your payment and we will get back to you within 24 hours. For any queries, consider contacting us through the phone numbers or email us at contact@conscientia.co.in (Please try to reach us after 5 PM on weekdays).\n"\
+"\n"\
+"Thanks and Regards\n"\
+"Team Conscientia\n"\
+"Indian Institute of Space Science and Technology\n"\
+"Thiruvanthapuram\n"\
+"contact@conscientia.co.in\n"\
+"Phone: 6369312390/9083722796\n"
+    email_subject="Payment and finalization of workshop registration"
+    email_msg = EmailMessage(
+        email_subject,
+        email_body,
+        None,
+        [request.user.username],
+    )
+    print(email_body)
+    email_msg.send()
+    return redirect('index')

@@ -44,39 +44,7 @@
                 </div>
                 <h2 class="headingh2">Click on posters, to know more!<h2>
             </div>
-            <form class="form" action="/event-register">
-                {% csrf_token %}
-                <h1 class="headingh1">Registration</h1>
-                <p class="formp">Complete your registration for workshop.</p>
-                <div class="formgroup">
-                    <input type="text" id="phone" class="forminput" autocomplete="off" placeholder="&#xf095">
-                    <label for="phone" class="formlabel">Phone</label>
-                </div>
-                <div class="formgroup">
-                    <div class="select-field">
-                        <label class="selectlabel">&#xf03a</label>
-                        <label class="selectlabel">Select the workshops</label>
-                        <label class="selectlabel" id="arrow">&#xf0d7</label>
-                    </div>
-                    <!---------List of checkboxes and options----------->
-                    <div class="list">
-                        
-                        <label for="task1" class="task">
-                            <input type="checkbox" name="event[]" value="event1" id="task1">
-                            OpenVSP Workshop
-                        </label>
-                        <label for="task2" class="task">
-                            <input type="checkbox" name="event[]" value="event2" id="task2">
-                            Fusion360 Workshop
-                        </label>
-                        <label for="task3" class="task">
-                            <input type="checkbox" name="event[]" value="event3" id="task3">
-                            Task 3
-                        </label>
-                    </div>
-                </div>
-            <input type="submit" value="Submit" class="signup" id='submit'>
-        </form>
+            <form class="form" action="{% url 'eventRegister' %}">A</form>
     </div>
     <script src="/static/js/iziToast.min.js" type="text/javascript"></script>
     <script src="/static/js/swiped-events.js" type="text/javascript"></script>
