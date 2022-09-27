@@ -47,7 +47,21 @@ body{
   border-left: 6px solid white;
   height: 70vh;
 }
-
+a{
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'Nunito', sans-serif;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-align: center;
+  text-shadow: 0px 0px 2px var(--accent);
+  transition: 0.2s;
+}
+a:hover{
+    font-size: 19px;
+}
 .form{
     position: relative;
     display: flex;
