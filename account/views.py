@@ -71,7 +71,7 @@ def saveAccount(request):
                 #user.save()
                 #return redirect('login')
                 email_msg = createEmail(request, user)
-                #email_msg.send()
+                email_msg.send()
                 context['status'] = 'True'
                 context['user_name'] = name
                 return render(request,'verification.html', context=context)
@@ -150,6 +150,6 @@ f"events :- {eventnames[:-2]}\n"\
         None,
         [request.user.username],
     )
-    #email_msg.send()
+    email_msg.send()
     context={"title":"Confirmation email sent","message":"Registration successful, kindly complete the payment."}
     return render(request, 'events.html',context=context)
