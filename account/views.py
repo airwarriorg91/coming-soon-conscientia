@@ -20,7 +20,7 @@ from .tokens import token_generator
 
 from django.views.decorators.csrf import csrf_protect
 
-
+@csrf_protect
 def createEmail(request, user):
     uidb64 = urlsafe_base64_encode(force_bytes(user.pk))
     domain = get_current_site(request).domain
@@ -71,7 +71,7 @@ def saveAccount(request):
                 #user.save()
                 #return redirect('login')
                 email_msg = createEmail(request, user)
-                email_msg.send()
+                #email_msg.send()
                 context['status'] = 'True'
                 context['user_name'] = name
                 return render(request,'verification.html', context=context)
@@ -80,7 +80,7 @@ def saveAccount(request):
 
 @csrf_protect
 def loginView(request):
-    context = {'message':None}
+    context = {'title':None}
     if request.method == 'POST':
         email = request.POST['email']
         password = request.POST['password']
@@ -88,7 +88,7 @@ def loginView(request):
         login(request, user)
         user.save()
     else:
-        context['message'] = 'Check your email/password again'
+        context['title'] = 'Oops! Something went wrong.'
         return render(request, 'login.html', context=context)
     user = request.user
     print('is_active: ',user.is_active)
@@ -121,7 +121,7 @@ def continueView(request):
 
 @csrf_protect
 def eventRegisterView(request):
-    event_name = {'event1':'OpenVSP', 'event2':'fusion 360', 'event3':'simulation', 'event4':''}
+    event_name = {'event1':'OpenVSP', 'event2':'Fusion360', 'event3':'Ansys Simulation', 'event4':''}
     eventnames = ''
     if request.method == 'POST':
         events = request.POST.getlist('event[]')
@@ -132,6 +132,7 @@ def eventRegisterView(request):
 
     email_body = f"Hello {request.user.first_name}!\n"\
 "Thank you for registering in the workshops. You have registered for the following workshops,"\
+f"events :- {eventnames[:-2]}\n"\
 "To confirm your participation, kindly deposit your Workshop Fees (Rs.100/Workshop) to this UPI ID: akash629001@okhdfcbank. "\
 "Allow us to confirm your payment and we will get back to you within 24 hours. For any queries, consider contacting us through the phone numbers or email us at contact@conscientia.co.in (Please try to reach us after 5 PM on weekdays).\n"\
 "\n"\
@@ -140,8 +141,8 @@ def eventRegisterView(request):
 "Indian Institute of Space Science and Technology\n"\
 "Thiruvanthapuram\n"\
 "contact@conscientia.co.in\n"\
-"Phone: 6369312390/9083722796\n"\
-f"events :- {eventnames[:-2]}"
+"Phone: 6369312390/9083722796\n"
+
     email_subject="Payment and finalization of workshop registration"
     email_msg = EmailMessage(
         email_subject,
@@ -149,5 +150,6 @@ f"events :- {eventnames[:-2]}"
         None,
         [request.user.username],
     )
-    email_msg.send()
-    return redirect('index')
+    #email_msg.send()
+    context={"title":"Confirmation email sent","message":"Registration successful, kindly complete the payment."}
+    return render(request, 'events.html',context=context)

@@ -104,14 +104,14 @@
         console.log("right " + counter);
         }); 
         }
-
+        {% if title %}
         function notify(){
-            iziToast.info({
-            title: 'Download Started',
-            message: 'The brochure download has started.',
+            iziToast.error({
+            title: '{{title}}',
+            message: 'Kindly check you email/password again!',
             });
         };
-        
+        {% endif %}
         </script>
     </body>
 </html>

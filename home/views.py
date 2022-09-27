@@ -16,9 +16,5 @@ def register(request):
 def events(request):
     return render(request,'events.html')
 
-def register2(request):
-    return HttpResponse('user = ' + str(request.user) + ' status = ' + str(request.user.is_active))
-    #return render(request,'register2.html')
-
 def verify(request):
     return render(request,'verification.html')

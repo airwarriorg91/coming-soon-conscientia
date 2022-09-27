@@ -126,6 +126,7 @@
         </div>
         <script src="/static/js/iziToast.min.js" type="text/javascript"></script>
         <script type="text/javascript"\>
+        window.onloadend = notify2();
         function openPage(pageName){
         if(screen.width>1024){
         if(pageName=="Workshops"){
@@ -167,6 +168,14 @@
             message: 'The brochure download has started.',
             });
         };
+        {% if title %}
+        function notify2(){
+            iziToast.info({
+            title: "{{title}}",
+            message: "{{message}}",
+            });
+        };
+        {% endif %}
         </script>
     </body>
 </html>
