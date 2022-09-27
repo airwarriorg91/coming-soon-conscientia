@@ -90,11 +90,11 @@ def loginView(request):
     else:
         context['message'] = 'Check your email/password again'
         return render(request, 'login.html', context=context)
-    # user = request.user
-    # print(user)
+    user = request.user
+    print(user)
     if user is not None:
         if user.is_active:
-            return redirect('register2')
+            return redirect('eventRegister')
         else:
             return redirect('save')
     return redirect('index')
