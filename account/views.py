@@ -91,12 +91,12 @@ def loginView(request):
         context['message'] = 'Check your email/password again'
         return render(request, 'login.html', context=context)
     user = request.user
-    print(user)
+    print('is_active: ',user.is_active)
     if user is not None:
         if user.is_active:
-            return redirect('eventRegister')
+            return redirect('continue')
         else:
-            return redirect('save')
+            return redirect('verify')
     return redirect('index')
 
 def logout_defined(request):
@@ -110,7 +110,7 @@ class VerificationView(View):
         user = User.objects.all().filter(pk=uid)[0]
         user.is_active = True
         user.save()
-        # login(request, user)
+        #login(request, user)
         return redirect('login')
 
 def continueView(request):
@@ -123,7 +123,7 @@ def continueView(request):
 def eventRegisterView(request):
     email_body = f"Hello {request.user.first_name}!\n"\
 "Thank you for registering in the workshops. You have registered for the following workshops,"\
-"To confirm your participation, kindly deposit your Workshop Fees (Rs.100/Workshop) to this UPI ID: akash629001@okhdfcbank"\
+"To confirm your participation, kindly deposit your Workshop Fees (Rs.100/Workshop) to this UPI ID: akash629001@okhdfcbank. "\
 "Allow us to confirm your payment and we will get back to you within 24 hours. For any queries, consider contacting us through the phone numbers or email us at contact@conscientia.co.in (Please try to reach us after 5 PM on weekdays).\n"\
 "\n"\
 "Thanks and Regards\n"\
@@ -139,6 +139,5 @@ def eventRegisterView(request):
         None,
         [request.user.username],
     )
-    print(email_body)
     email_msg.send()
     return redirect('index')
