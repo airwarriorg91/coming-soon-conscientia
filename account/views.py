@@ -4,7 +4,7 @@ from email.message import EmailMessage
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.http import HttpResponse
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group
 from django.contrib.auth import authenticate, login
 
 from django.core.mail import EmailMessage
@@ -121,6 +121,15 @@ def continueView(request):
 
 @csrf_protect
 def eventRegisterView(request):
+    event_name = {'event1':'OpenVSP', 'event2':'fusion 360', 'event3':'simulation', 'event4':''}
+    eventnames = ''
+    if request.method == 'POST':
+        events = request.POST.getlist('event[]')
+        for event in events:
+            group = Group.objects.get(name=event)
+            request.user.groups.add(group)
+            eventnames += event_name[event] + ' ,'
+
     email_body = f"Hello {request.user.first_name}!\n"\
 "Thank you for registering in the workshops. You have registered for the following workshops,"\
 "To confirm your participation, kindly deposit your Workshop Fees (Rs.100/Workshop) to this UPI ID: akash629001@okhdfcbank. "\
@@ -131,7 +140,8 @@ def eventRegisterView(request):
 "Indian Institute of Space Science and Technology\n"\
 "Thiruvanthapuram\n"\
 "contact@conscientia.co.in\n"\
-"Phone: 6369312390/9083722796\n"
+"Phone: 6369312390/9083722796\n"\
+f"events :- {eventnames[:-2]}"
     email_subject="Payment and finalization of workshop registration"
     email_msg = EmailMessage(
         email_subject,
