@@ -33,6 +33,7 @@ DEBUG = False
 ALLOWED_HOSTS = ['https://conscientia.co.in', 'coming-soon-conscientia.azurewebsites.net']
 
 CSRF_TRUSTED_ORIGINS = ['https://conscientia.co.in']
+ADMINS = [('Gaurav', 'gauravxpgupta@gmail.com'),]
 
 # Application definition
 
