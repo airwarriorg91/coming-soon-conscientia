@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-9(n*z7n#rzn-!f5ncatgx1-@42-6xyaw6gzqi*mvh2rdxt_=9n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://conscientia.co.in', 'coming-soon-conscientia.azurewebsites.net']
+ALLOWED_HOSTS = ['0.0.0.0','127.0.0.1','localhost','https://conscientia.co.in', 'https://coming-soon-conscientia.azurewebsites.net']
 
 CSRF_TRUSTED_ORIGINS = ['https://conscientia.co.in']
 ADMINS = [('Gaurav', 'gauravxpgupta@gmail.com'),]
@@ -138,7 +138,7 @@ STATICFILES_DIRS = [
     #BASE_DIR / "static",
     os.path.join(BASE_DIR, 'static'),
 ]
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 django_heroku.settings(locals())
 
 try:

@@ -1,0 +1,307 @@
+/* Set height of body and the document to 100% to enable "full page tabs" */
+
+:root{
+    --primary: #d49849;
+    --blue-light: #c9daea;
+    --blue-dark: #003153;
+    --primary-dark: #774e24;
+    --accent: #941c2f;
+}
+
+body, html {
+  width: 100%;
+  margin: 0;
+  height:100vh;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+html{
+  background-image: url("/static/img/bg.34df462554b3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body{
+  background-color: rgba(0,0,0,0.5);
+  overflow-y: scroll;
+}
+.links{
+  display:flex;
+  width:100%;
+  flex-direction: row;
+  top:0;
+  flex-basis: 50% 50%;
+}
+
+.links img{
+  height:10vh;
+}
+
+.links a{
+  display:flex;
+  justify-content: center;
+  align-content: center;
+  background-color: var(--primary-dark);
+  padding: 10px;
+  margin:10px;
+  height:fit-content;
+  border-radius:10px;
+  text-decoration: none;
+}
+.links a:hover{
+  background-color: var(--blue-dark);
+}
+.logo-container{
+  display:flex;
+  justify-content: flex-start;
+  align-content: center;
+  margin:20px;
+  width:50%;
+}
+.button-container{
+  display:flex;
+  justify-content: flex-end;
+  align-content: center;
+  margin:10px;
+  width:50%;
+}
+/* Style tab links */
+.tablink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 50%;
+  padding:5px;
+  transition: 0.1s;
+  border:none;
+  text-align: center;
+  background-color: transparent;
+  padding:10px 0px;
+}
+
+.tablink:hover {
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+
+
+.headingh1{
+    color:#FFF;
+    font-size: 28px;
+    font-family: "Source Sans Pro", sans-serif;
+    letter-spacing: 2px;
+    text-align: center;
+    width: fit-content;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    position: relative;
+    font-weight: 700;
+    text-shadow: 1.5px 1.5px 1.5px var(--accent)
+}
+
+.headingh1::after {
+  content: "";
+  display: block;
+  padding-top: 2px;
+  width:99%;
+  border-bottom: 5px solid var(--primary);
+  transform: skew(-12deg);
+}
+
+.headingh2{
+    color:#FFF;
+    font-size: 20px;
+    font-family: "Source Sans Pro", sans-serif;
+    letter-spacing: 2px;
+    text-align: center;
+    width: fit-content;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    position: relative;
+    font-weight: 700;
+    text-shadow: 1.5px 1.5px 1.5px var(--accent);
+}
+
+.headingh2button{
+    color:#FFF;
+    font-size: 20px;
+    font-family: "Source Sans Pro", sans-serif;
+    letter-spacing: 2px;
+    text-align: center;
+    width: fit-content;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    position: relative;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.workshopscontainer, .gamingcontainer{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    column-gap: 10px;
+    row-gap: 15px;
+    width: 90%;
+    grid-auto-flow: column;
+    margin:20px 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+.eventitema{
+    grid-column: 1;
+    display: flex;
+    height: 70vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding:10px;
+    margin-bottom:45px;
+    margin-top: 20px;
+}
+
+.eventitematext{
+    grid-column: 1;
+    background-color: rgba();
+    display: flex;
+    height: 70vh;
+    justify-content: center;
+    flex-direction: column;
+    padding:20px;
+    margin-left:20px;
+    margin-bottom:45px;
+    margin-top: 20px;
+}
+.eventitemb{
+    grid-column: 2;
+    display: flex;
+    height: 70vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding:10px;
+    margin-bottom:45px;
+    margin-top: 20px;
+}
+.eventitembtext{
+    grid-column: 2;
+    display: flex;
+    height: 70vh;
+    justify-content: center;
+    flex-direction: column;
+    padding:20px; 
+    margin-bottom:45px;
+    margin-top: 20px;
+}
+.poster{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    height:100%;
+}
+
+.poster img{
+  size:a4;
+}
+.eventsbutton{
+    color:#fff;
+    margin: 0 10px;
+    font-weight:600;
+    width: 30%;
+    align-self: flex-end;
+    text-decoration: none;
+    text-align: center;
+    transition: 0.4s;
+    padding: 8px 8px;
+    border-radius: 80px;
+    font-size: 13px;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--primary-dark);
+}
+
+.eventsbutton:hover{
+    background-color: var(--primary);
+}
+
+.eventspara{
+    color:#FFF;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: justify;
+    margin:10px 0px;
+}
+
+
+.workshopcontainermobile, .gamingcontainermobile{
+    display: none;
+    align-items: center;
+    justify-content:center;
+    flex-direction:column;
+    width:100vw;
+    margin:10px 20px;
+    padding:10px 10px;
+}
+
+.eventsboxmobile{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    flex-direction:column;
+    width:100%;
+    margin:20px 0px;   
+}
+
+@media (max-width: 1024px){
+
+  .links{
+    margin-bottom: 15px;
+  }
+
+  .poster{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    width:90%;
+    margin-bottom: 20px;
+  }
+  .links img{
+    height:5vh;
+  }
+
+  .headingh2{
+    font-size: 18px;
+  }
+  .logo-container{
+    margin:10px;
+  }
+  .button-container{
+    margin:0px;
+  }
+  .poster img{
+  margin-bottom: 20px;
+}
+  .eventspara{
+    width:90vw;
+  }
+
+    .workshopscontainer{
+        display: none;
+    }
+
+    .workshopcontainermobile{
+        display: flex;
+    }
+
+    .gamingcontainer{
+        display: none;
+    }
+
+    .gamingcontainermobile{
+        display: flex;
+    }
+
+}

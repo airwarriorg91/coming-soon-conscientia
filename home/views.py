@@ -7,7 +7,7 @@ def index(request):
 def register(request):
     if request.user.username:
         if request.user.is_active:
-            return redirect('eventRegister')
+            return render(request,'events.html')
         else:
             return redirect('verification')
     else:
