@@ -28,9 +28,9 @@ SECRET_KEY = 'django-insecure-9(n*z7n#rzn-!f5ncatgx1-@42-6xyaw6gzqi*mvh2rdxt_=9n
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*','https://conscientia.co.in']
+ALLOWED_HOSTS = ['https://conscientia.co.in']
 
 CSRF_TRUSTED_ORIGINS = ['https://conscientia.co.in']
 
@@ -137,7 +137,7 @@ STATICFILES_DIRS = [
     #BASE_DIR / "static",
     os.path.join(BASE_DIR, 'static'),
 ]
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 django_heroku.settings(locals())
 
 try:
