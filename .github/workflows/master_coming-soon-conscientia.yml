@@ -40,9 +40,6 @@ jobs:
         run: echo "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser('gaurav', 'gauravxpgupta@gmail.com', 'iav8')" | python manage.py shell
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
       
-      - name: collecting static
-        run: python manage.py collectstatic
-      
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v2
         with:
