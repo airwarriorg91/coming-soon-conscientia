@@ -26,6 +26,8 @@
                         <input type="radio" name="radio-btn" id="radio1">
                         <input type="radio" name="radio-btn" id="radio2">
                         <input type="radio" name="radio-btn" id="radio3">
+                        <input type="radio" name="radio-btn" id="radio4">
+                        <input type="radio" name="radio-btn" id="radio5">
                         <div class="slide first">
                             <a href="/static/OpenVSP_brochure.pdf" id="poster1" onclick="notify()">
                                 <img src="/static/img/1.jpg">
@@ -41,15 +43,29 @@
                                 <img src="/static/img/3.png">
                             </a>
                         </div>
+                        <div class="slide">
+                            <a href="/static/IEEE_brochure.pdf" id="poster4" onclick="notify()">
+                                <img src="/static/img/4.jpeg">
+                            </a>
+                        </div>
+                        <div class="slide">
+                            <a href="/static/Rocketry_brochure.pdf" id="poster5" onclick="notify()">
+                                <img src="/static/img/5.png">
+                            </a>
+                        </div>
                         <div class="navigation-auto">
                             <div class="auto-btn1"></div>
                             <div class="auto-btn2"></div>
                             <div class="auto-btn3"></div>
+                            <div class="auto-btn4"></div>
+                            <div class="auto-btn5"></div>
                         </div>
                         <div class="navigation-manual">
                             <label for="radio1" class="manual-btn"></label>
                             <label for="radio2" class="manual-btn"></label>
                             <label for="radio3" class="manual-btn"></label>
+                            <label for="radio4" class="manual-btn"></label>
+                            <label for="radio5" class="manual-btn"></label>
                         </div>
                     </div>
                 </div>
@@ -90,15 +106,15 @@
         setInterval(function(){
         document.getElementById('radio'+ counter).checked = true;
         counter++;
-        if(counter>3){
+        if(counter>5){
         counter=1;
         }
         }, 3000);
         }else{
             document.addEventListener('swiped-left', function(e) {
              // the element that was swiped
-            if(counter>=3){
-            counter=3;
+            if(counter>=5){
+            counter=5;
             document.getElementById('radio'+ counter).checked = true;
         }else{
             counter++;
