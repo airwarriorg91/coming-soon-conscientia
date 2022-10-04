@@ -121,7 +121,7 @@ def continueView(request):
 
 @csrf_protect
 def eventRegisterView(request):
-    event_name = {'event1':'OpenVSP', 'event2':'Fusion360', 'event3':'Simulations', 'event4':''}
+    event_name = {'event1':'OpenVSP', 'event2':'Fusion360', 'event3':'Simulations', 'event4':'IEEE Conference','event5':'Rocketry Workshop'}
     eventnames = ''
     if request.method == 'POST':
         events = request.POST.getlist('event[]')
