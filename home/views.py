@@ -5,13 +5,7 @@ def index(request):
     return render(request,'index.html')
 
 def register(request):
-    if request.user.username:
-        if request.user.is_active:
-            return render(request,'events.html')
-        else:
-            return redirect('verification')
-    else:
-        return render(request, 'register.html')
+    return redirect('https://forms.gle/ZPRw3oyiMpKcZdU37')
 
 def events(request):
     return render(request,'events.html')
