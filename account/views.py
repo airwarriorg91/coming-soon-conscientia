@@ -121,7 +121,12 @@ def continueView(request):
 
 @csrf_protect
 def eventRegisterView(request):
-    event_name = {'event1':'OpenVSP', 'event2':'Fusion360', 'event3':'Simulations', 'event4':'IEEE Conference','event5':'Rocketry Workshop'}
+    event_name = {'event1':'War of Bots','event2':'Dronetrix','event3':'RC Plane','event4':'Amphibot',
+    'event5': 'RC Car', 'event6':'Line Follower', 'event7':'Space Habitat Challenge', 'event8':'Water Rocket','event9':'Panchmantra','event10':'Arduino 2.0','event11':'Vyomverse'
+    ,'event12':'Valorant','event13':'Machinist','event14':'Hangover','event15':'TechGlide','event16':'PhyKnight','event17':'CAD','event18':'Logic Circuit Design','event19':'Circuiter'
+    ,'event20':'Tarang','event21':'Night Sky Hunt','event22':'How Adam Did It','event23':'Techwiz','event24':'Bletchley Park','event25':'C Cubed','event26':'Cosmic Clash','event27':'Astroreflection'
+    ,'event28':'FIFA', 'event29':'Mathematrix', 'event30':'3-MPT'
+    ,'event31':'Fusion360', 'event32':'Simulations','event33':'Rocketry Workshop','event34':'MATLAB Workshop'}
     eventnames = ''
     if request.method == 'POST':
         events = request.POST.getlist('event[]')
@@ -131,12 +136,13 @@ def eventRegisterView(request):
             eventnames += event_name[event] + ', '
 
     email_body = f"Hello {request.user.first_name}!\n"\
-"Thank you for registering in the workshops. You have registered for the following workshops,\n"\
+"Thank you for registering in the events/workshops. You have registered for the following workshops,\n"\
 f"Selected Events :- {eventnames[:-2]}\n"\
-"Workshop Registration Fees: Rs.100 for OpenVSP and Fusion360 Workshop. Rs.200 for Simulations Workshop.\n"\
+"Workshop Registration Fees: Rs.1000 (War of Bots), Rs.500 (Dronetrix - RC Car), Rs.200 (Line Follower - FIFA), Rs.100 (Mathematrix)\n"\
 "To confirm your participation, kindly deposit your Workshop Fees to this UPI ID: akash629001@okhdfcbank. "\
 "Please share a screenshot of your payment to 6369312390 through Whatsapp to accelerate the verification."\
 "Allow us to confirm your payment and we will get back to you within 24 hours. For any queries, consider contacting us through the phone numbers or email us at contact@conscientia.co.in (Please try to reach us after 5 PM on weekdays).\n"\
+"If you interested in staying in our campus during the events, kindly fill the attached Google Form,"\
 "\n"\
 "Thanks and Regards\n"\
 "Team Conscientia\n"\
@@ -145,7 +151,7 @@ f"Selected Events :- {eventnames[:-2]}\n"\
 "contact@conscientia.co.in\n"\
 "Phone: 6369312390/9083722796\n"
 
-    email_subject="Payment and finalization of workshop registration"
+    email_subject="Payment and finalization of event/workshop registration"
     email_msg = EmailMessage(
         email_subject,
         email_body,

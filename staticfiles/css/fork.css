@@ -304,4 +304,7 @@ body{
         display: flex;
     }
 
+    .geventscontainer{
+        display: none;
+    }
 }

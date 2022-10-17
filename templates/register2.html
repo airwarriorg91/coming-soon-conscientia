@@ -24,23 +24,13 @@
                         <input type="radio" name="radio-btn" id="radio2">
                         <input type="radio" name="radio-btn" id="radio3">
                         <div class="slide first">
-                            <a href="/static/OpenVSP_borchure.pdf" id="poster1" onclick="notify()">
-                                <img src="/static/img/1.jpg">
-                            </a>
-                        </div>
-                        <div class="slide">
-                            <a href="/static/Fusion360_brochure.pdf" id="poster2" onclick="notify()">
+                            <a href="/static/Fusion360_brochure.pdf" id="poster1" onclick="notify()">
                                 <img src="/static/img/2.png">
                             </a>
                         </div>
                         <div class="slide">
-                            <a href="/static/Simulation_brochure.pdf" id="poster3" onclick="notify()">
+                            <a href="/static/Simulation_brochure.pdf" id="poster2" onclick="notify()">
                                 <img src="/static/img/3.png">
-                            </a>
-                        </div>
-                        <div class="slide">
-                            <a href="/static/IEEE_brochure.pdf" id="poster3" onclick="notify()">
-                                <img src="/static/img/4.jpeg">
                             </a>
                         </div>
                         <div class="slide">
@@ -52,15 +42,11 @@
                             <div class="auto-btn1"></div>
                             <div class="auto-btn2"></div>
                             <div class="auto-btn3"></div>
-                            <div class="auto-btn4"></div>
-                            <div class="auto-btn5"></div>
                         </div>
                         <div class="navigation-manual">
                             <label for="radio1" class="manual-btn"></label>
                             <label for="radio2" class="manual-btn"></label>
                             <label for="radio3" class="manual-btn"></label>
-                            <label for="radio4" class="manual-btn"></label>
-                            <label for="radio5" class="manual-btn"></label>
                         </div>
                     </div>
                 </div>
@@ -69,7 +55,7 @@
             <form class="form" method='post' action="{% url 'eventRegister' %}" >
                 {% csrf_token %}
                 <h1 class="headingh1">Registration</h1>
-                <p class="formp">Complete your registration for workshop.</p>
+                <p class="formp">Complete your registration for event/workshop.</p>
                 <div class="formgroup">
                     <input type="text" id="phone" class="forminput" autocomplete="off" placeholder="&#xf095">
                     <label for="phone" class="formlabel">Phone</label>
@@ -77,26 +63,147 @@
                 <div class="formgroup">
                     <div class="select-field" id="dropbox">
                         <label class="selectlabel">&#xf03a</label>
-                        <label class="selectlabel">Select the workshops</label>
+                        <label class="selectlabel">Select the events/workshops</label>
                         <label class="selectlabel" id="arrow">&#xf0d7</label>
                     </div>
                     <!---------List of checkboxes and options----------->
                     <div class="list">
                         <label for="task1" class="task">
-                            <input type="checkbox" name="event[]" value="event2" id="task1">
-                            Fusion360 Workshop
+                            <input type="checkbox" name="event[]" value="event1" id="task1">
+                            War of Bots
                         </label>
                         <label for="task2" class="task">
-                            <input type="checkbox" name="event[]" value="event3" id="task2">
-                            Simulations Workshop
+                            <input type="checkbox" name="event[]" value="event2" id="task2">
+                            Dronetrix
                         </label>
                         <label for="task3" class="task">
-                            <input type="checkbox" name="event[]" value="event5" id="task3">
+                            <input type="checkbox" name="event[]" value="event3" id="task3">
+                            RC Plane
+                        </label>
+                        <label for="task4" class="task">
+                            <input type="checkbox" name="event[]" value="event4" id="task4">
+                            Amphibot
+                        </label>
+                        <label for="task5" class="task">
+                            <input type="checkbox" name="event[]" value="event5" id="task5">
+                            RC Car
+                        </label>
+                        <label for="task6" class="task">
+                            <input type="checkbox" name="event[]" value="event6" id="task6">
+                            Line Follower
+                        </label>
+                        <label for="task7" class="task">
+                            <input type="checkbox" name="event[]" value="event7" id="task7">
+                            Space Habitat Challenge
+                        </label>
+                        <label for="task8" class="task">
+                            <input type="checkbox" name="event[]" value="event8" id="task8">
+                            Water Rocket
+                        </label>
+                        <label for="task9" class="task">
+                            <input type="checkbox" name="event[]" value="event9" id="task9">
+                            Panchmantra
+                        </label>
+                        <label for="task10" class="task">
+                            <input type="checkbox" name="event[]" value="event10" id="task10">
+                            Arduino 2.0
+                        </label>
+                        <label for="task11" class="task">
+                            <input type="checkbox" name="event[]" value="event11" id="task11">
+                            Vyomverse
+                        </label>
+                        <label for="task12" class="task">
+                            <input type="checkbox" name="event[]" value="event12" id="task12">
+                            Valorant
+                        </label>
+                        <label for="task13" class="task">
+                            <input type="checkbox" name="event[]" value="event13" id="task13">
+                            Machinist
+                        </label>
+                        <label for="task14" class="task">
+                            <input type="checkbox" name="event[]" value="event14" id="task14">
+                            Hangover
+                        </label>
+                        <label for="task15" class="task">
+                            <input type="checkbox" name="event[]" value="event15" id="task15">
+                            Tech Glide
+                        </label>
+                        <label for="task16" class="task">
+                            <input type="checkbox" name="event[]" value="event16" id="task16">
+                            PhyKnight
+                        </label>
+                        <label for="task17" class="task">
+                            <input type="checkbox" name="event[]" value="event17" id="task17">
+                            CAD
+                        </label>
+                        <label for="task18" class="task">
+                            <input type="checkbox" name="event[]" value="event18" id="task18">
+                            Logic Circuit Design
+                        </label>
+                        <label for="task19" class="task">
+                            <input type="checkbox" name="event[]" value="event19" id="task19">
+                            Circuiter
+                        </label>
+                        <label for="task20" class="task">
+                            <input type="checkbox" name="event[]" value="event20" id="task20">
+                            Tarang
+                        </label>
+                        <label for="task21" class="task">
+                            <input type="checkbox" name="event[]" value="event21" id="task21">
+                            Night Sky Hunt
+                        </label>
+                        <label for="task22" class="task">
+                            <input type="checkbox" name="event[]" value="event22" id="task22">
+                            How Adam Did It
+                        </label>
+                        <label for="task23" class="task">
+                            <input type="checkbox" name="event[]" value="event23" id="task23">
+                            Techwiz
+                        </label>
+                        <label for="task24" class="task">
+                            <input type="checkbox" name="event[]" value="event24" id="task24">
+                            Bletchley Park
+                        </label>
+                        <label for="task25" class="task">
+                            <input type="checkbox" name="event[]" value="event25" id="task25">
+                            C Cubed
+                        </label>
+                        <label for="task26" class="task">
+                            <input type="checkbox" name="event[]" value="event26" id="task26">
+                            Cosmic Clash
+                        </label>
+                        <label for="task27" class="task">
+                            <input type="checkbox" name="event[]" value="event27" id="task27">
+                            AstroReflection
+                        </label>
+                        <label for="task28" class="task">
+                            <input type="checkbox" name="event[]" value="event28" id="task28">
+                            FIFA
+                        </label>
+                        <label for="task29" class="task">
+                            <input type="checkbox" name="event[]" value="event29" id="task29">
+                            Mathematrix
+                        </label>
+                        <label for="task31" class="task">
+                            <input type="checkbox" name="event[]" value="event31" id="task31">
+                            Fusion360 Workshop
+                        </label>
+                        <label for="task32" class="task">
+                            <input type="checkbox" name="event[]" value="event32" id="task32">
+                            Simulations Workshop
+                        </label>
+                        <label for="task33" class="task">
+                            <input type="checkbox" name="event[]" value="event33" id="task33">
                             Rocketry Workshop
+                        </label>
+                        <label for="task34" class="task">
+                            <input type="checkbox" name="event[]" value="event34" id="task34">
+                            MATLAB Workshop
                         </label>
                     </div>
                 </div>
             <input type="submit" value="Submit" class="signup" id='submit'>
+            <p class="formp">Report any issue to gauravxpgupta@gmail.com</p>
         </form>
     </div>
     <script src="/static/js/iziToast.min.js" type="text/javascript"></script>
@@ -109,15 +216,15 @@
     setInterval(function(){
     document.getElementById('radio'+ counter).checked = true;
     counter++;
-    if(counter>5){
+    if(counter>3){
     counter=1;
     }
     }, 3000);
     }else{
     document.addEventListener('swiped-left', function(e) {
     // the element that was swiped
-    if(counter>=5){
-    counter=5;
+    if(counter>=3){
+    counter=3;
     document.getElementById('radio'+ counter).checked = true;
     }else{
     counter++;

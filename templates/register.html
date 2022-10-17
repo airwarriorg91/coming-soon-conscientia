@@ -26,30 +26,18 @@
                         <input type="radio" name="radio-btn" id="radio1">
                         <input type="radio" name="radio-btn" id="radio2">
                         <input type="radio" name="radio-btn" id="radio3">
-                        <input type="radio" name="radio-btn" id="radio4">
-                        <input type="radio" name="radio-btn" id="radio5">
                         <div class="slide first">
-                            <a href="/static/OpenVSP_brochure.pdf" id="poster1" onclick="notify()">
-                                <img src="/static/img/1.jpg">
-                            </a>
-                        </div>
-                        <div class="slide">
-                            <a href="/static/Fusion360_brochure.pdf" id="poster2" onclick="notify()">
+                            <a href="/static/Fusion360_brochure.pdf" id="poster1" onclick="notify()">
                                 <img src="/static/img/2.png">
                             </a>
                         </div>
                         <div class="slide">
-                            <a href="/static/Simulation_brochure.pdf" id="poster3" onclick="notify()">
+                            <a href="/static/Simulation_brochure.pdf" id="poster2" onclick="notify()">
                                 <img src="/static/img/3.png">
                             </a>
                         </div>
                         <div class="slide">
-                            <a href="/static/IEEE_brochure.pdf" id="poster4" onclick="notify()">
-                                <img src="/static/img/4.jpeg">
-                            </a>
-                        </div>
-                        <div class="slide">
-                            <a href="/static/Rocketry_brochure.pdf" id="poster5" onclick="notify()">
+                            <a href="/static/Rocketry_brochure.pdf" id="poster3" onclick="notify()">
                                 <img src="/static/img/5.png">
                             </a>
                         </div>
@@ -57,15 +45,11 @@
                             <div class="auto-btn1"></div>
                             <div class="auto-btn2"></div>
                             <div class="auto-btn3"></div>
-                            <div class="auto-btn4"></div>
-                            <div class="auto-btn5"></div>
                         </div>
                         <div class="navigation-manual">
                             <label for="radio1" class="manual-btn"></label>
                             <label for="radio2" class="manual-btn"></label>
                             <label for="radio3" class="manual-btn"></label>
-                            <label for="radio4" class="manual-btn"></label>
-                            <label for="radio5" class="manual-btn"></label>
                         </div>
                     </div>
                 </div>
@@ -75,7 +59,7 @@
             <form action="/account/save/" method="post" class="form">
                 {% csrf_token %}
                 <h1 class="headingh1">Register</h1>
-                <p class="formp">Register yourself for the workshops.</p>
+                <p class="formp">Register yourself for the events/workshops.</p>
                 <div class="formgroup">
                     <input name="name" type="text" id="name" class="forminput" autocomplete="off" placeholder="&#xf007">
                     <label for="name" class="formlabel">Name</label>
@@ -94,6 +78,7 @@
                 </div>
                 <input type="submit" value="Submit" class="signup">
                 <p class="formp">Already registered, <a href="{% url 'login' %}">Login</a> !</p>
+                <p class="formp">Report any issue to gauravxpgupta@gmail.com</p>
             </form>
         </div>
         <script src="/static/js/iziToast.min.js" type="text/javascript"></script>
@@ -106,15 +91,15 @@
         setInterval(function(){
         document.getElementById('radio'+ counter).checked = true;
         counter++;
-        if(counter>5){
+        if(counter>3){
         counter=1;
         }
         }, 3000);
         }else{
             document.addEventListener('swiped-left', function(e) {
              // the element that was swiped
-            if(counter>=5){
-            counter=5;
+            if(counter>=3){
+            counter=3;
             document.getElementById('radio'+ counter).checked = true;
         }else{
             counter++;
