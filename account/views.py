@@ -142,7 +142,7 @@ f"Selected Events :- {eventnames[:-2]}\n"\
 "To confirm your participation, kindly deposit your Workshop Fees to this UPI ID: akash629001@okhdfcbank. "\
 "Please share a screenshot of your payment to 6369312390 through Whatsapp to accelerate the verification."\
 "Allow us to confirm your payment and we will get back to you within 24 hours. For any queries, consider contacting us through the phone numbers or email us at contact@conscientia.co.in (Please try to reach us after 5 PM on weekdays).\n"\
-"If you interested in staying in our campus during the events, kindly fill the attached Google Form,"\
+"If you interested in staying in our campus during the events, kindly fill the attached Google Form, https://forms.gle/VBbtzMHreUmU7wnV6"\
 "\n"\
 "Thanks and Regards\n"\
 "Team Conscientia\n"\
