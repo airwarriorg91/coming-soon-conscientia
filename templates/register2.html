@@ -255,9 +255,11 @@
     if(document.querySelector('.list').classList.contains('show')){
     document.getElementById("arrow").innerHTML="&#xf0d8";
     document.getElementById('submit').style.display='none';
+    document.body.style.overflowY = 'scroll';
     }else{
         document.getElementById("arrow").innerHTML="&#xf0d7";
         document.getElementById('submit').style.display='flex';
+        document.body.style.overflowY = 'hidden';
     }
     });
 
@@ -267,6 +269,7 @@
         document.querySelector('.list').classList.remove('show');
         document.getElementById("arrow").innerHTML="&#xf0d7";
         document.getElementById('submit').style.display='flex';
+        document.body.style.overflowY = 'hidden';
         }
         }
     });
