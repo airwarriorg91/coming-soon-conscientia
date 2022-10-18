@@ -267,10 +267,11 @@ a{
 
   .poster{
     display: flex;
-    justify-items: center;
+    justify-content: center;
     align-items: center;
     width:90%;
     margin-bottom: 20px;
+    height:auto;
   }
   .links img{
     height:5vh;
