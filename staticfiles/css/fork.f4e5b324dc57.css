@@ -18,7 +18,7 @@ body, html {
   flex-direction: column;
 }
 html{
-  background-image: url(/static/img/bg.jpg);
+  background-image: url("/static/img/bg.34df462554b3.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -159,15 +159,15 @@ a{
     display: flex;
     width: 90%;
     margin:20px 0px;
-    padding-top: 15px;
-    padding-bottom: 0px;
+    padding-top:20px;
+    padding-bottom: 20px;
     height:fit-content;
     justify-content: center;
     align-items: center;
 }
 .accomodationheadingh2{
     color:#FFF;
-    font-size: 18px;
+    font-size: 17px;
     font-family: "Source Sans Pro", sans-serif;
     letter-spacing: 2px;
     text-align: center;
@@ -177,27 +177,6 @@ a{
     position: relative;
     font-weight: 700;
     text-shadow: 1.5px 1.5px 1.5px var(--accent);
-    text-decoration: none;
-}
-
-.accomodationa{
-  color:#FFF;
-    font-size: 17.5px;
-    font-family: "Source Sans Pro", sans-serif;
-    letter-spacing: 2px;
-    text-align: center;
-    width: fit-content;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    position: relative;
-    font-weight: 700;
-    text-shadow: 1.5px 1.5px 1.5px var(--accent);
-    text-decoration: none;
-    transition: 0.1s;
-}
-
-.accomodationa:hover{
-  font-size: 18px;
 }
 .eventitema{
     grid-column: 1;

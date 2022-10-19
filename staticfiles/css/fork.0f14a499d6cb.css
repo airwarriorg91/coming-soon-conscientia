@@ -18,7 +18,7 @@ body, html {
   flex-direction: column;
 }
 html{
-  background-image: url(/static/img/bg.jpg);
+  background-image: url("/static/img/bg.34df462554b3.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -160,7 +160,7 @@ a{
     width: 90%;
     margin:20px 0px;
     padding-top: 15px;
-    padding-bottom: 0px;
+    padding-bottom: 10px;
     height:fit-content;
     justify-content: center;
     align-items: center;
@@ -182,7 +182,7 @@ a{
 
 .accomodationa{
   color:#FFF;
-    font-size: 17.5px;
+    font-size: 18px;
     font-family: "Source Sans Pro", sans-serif;
     letter-spacing: 2px;
     text-align: center;
@@ -197,7 +197,7 @@ a{
 }
 
 .accomodationa:hover{
-  font-size: 18px;
+  font-size: 19px;
 }
 .eventitema{
     grid-column: 1;
