@@ -44,6 +44,7 @@ a{
 
 .links a{
   display:flex;
+  font-family: "Source Sans Pro", sans-serif, "FontAwesome";
   justify-content: center;
   align-content: center;
   background-color: var(--primary-dark);
@@ -131,7 +132,7 @@ a{
 .headingh2button{
     color:#FFF;
     font-size: 20px;
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: "Source Sans Pro", sans-serif,"FontAwesome";
     letter-spacing: 2px;
     text-align: center;
     width: fit-content;
@@ -194,6 +195,9 @@ a{
     text-shadow: 1.5px 1.5px 1.5px var(--accent);
     text-decoration: none;
     transition: 0.1s;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 5px;
+    padding:5px;
 }
 
 .accomodationa:hover{

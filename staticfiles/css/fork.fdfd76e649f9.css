@@ -18,7 +18,7 @@ body, html {
   flex-direction: column;
 }
 html{
-  background-image: url(/static/img/bg.jpg);
+  background-image: url("/static/img/bg.34df462554b3.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -44,7 +44,6 @@ a{
 
 .links a{
   display:flex;
-  font-family: "Source Sans Pro", sans-serif, "FontAwesome";
   justify-content: center;
   align-content: center;
   background-color: var(--primary-dark);
@@ -132,7 +131,7 @@ a{
 .headingh2button{
     color:#FFF;
     font-size: 20px;
-    font-family: "Source Sans Pro", sans-serif,"FontAwesome";
+    font-family: "Source Sans Pro", sans-serif;
     letter-spacing: 2px;
     text-align: center;
     width: fit-content;
@@ -195,9 +194,6 @@ a{
     text-shadow: 1.5px 1.5px 1.5px var(--accent);
     text-decoration: none;
     transition: 0.1s;
-    background-color: rgba(255,255,255,0.2);
-    border-radius: 5px;
-    padding:5px;
 }
 
 .accomodationa:hover{
@@ -333,6 +329,7 @@ a{
   }
   .button-container{
     margin:0px;
+    font-size: 15px;
   }
   .poster img{
   margin-bottom: 20px;

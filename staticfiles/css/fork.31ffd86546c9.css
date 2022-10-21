@@ -18,7 +18,7 @@ body, html {
   flex-direction: column;
 }
 html{
-  background-image: url(/static/img/bg.jpg);
+  background-image: url("/static/img/bg.34df462554b3.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -195,9 +195,7 @@ a{
     text-shadow: 1.5px 1.5px 1.5px var(--accent);
     text-decoration: none;
     transition: 0.1s;
-    background-color: rgba(255,255,255,0.2);
-    border-radius: 5px;
-    padding:5px;
+    background-color: rgba(255,255,255,0.2)
 }
 
 .accomodationa:hover{
