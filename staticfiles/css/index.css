@@ -110,6 +110,17 @@ h2{
   text-shadow: 2px 2px 0px var(--accent);
 }
 
+h3{
+  color: var(--blue);
+  font-size: 1.7vw;
+  font-weight: bold;
+  font-family: 'Source Sans Pro', sans-serif;
+  letter-spacing: 7px;
+  cursor: text;
+  margin:10px 10px;
+  text-align: center;
+  text-shadow: 2px 2px 0px var(--accent);
+}
 .verifyh1{
   color: var(--blue);
   font-size: 2.0vw;
